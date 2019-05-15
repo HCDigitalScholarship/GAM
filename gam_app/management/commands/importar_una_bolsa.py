@@ -81,18 +81,18 @@ def import_image_file(filename, nombre_de_la_bolsa):
         print('[*] %s' % new_filename)
         dzi_me = pyvips.Image.new_from_file(new_path + new_filename)
 
-        if not os.path.isdir('/mnt/dzis1/'):
-            os.mkdir('/mnt/dzis1/')
-        dzi_me.dzsave('/mnt/dzis1/{}'.format(new_filename))
+        if not os.path.isdir('/mnt/dzis/'):
+            os.mkdir('/mnt/dzis/')
+        dzi_me.dzsave('/mnt/dzis/{}'.format(new_filename))
 
         #  Here we re-add the jpg to the filename, this is not really a good thing, but too late to change it
         os.rename(
-            '/mnt/dzis1/{}'.format(new_filename.replace('.jpg', '.dzi')),
-            '/mnt/dzis1/{}'.format(new_filename + '.dzi'),
+            '/mnt/dzis/{}'.format(new_filename.replace('.jpg', '.dzi')),
+            '/mnt/dzis/{}'.format(new_filename + '.dzi'),
         )
         os.rename(
-            '/mnt/dzis1/{}'.format(new_filename.replace('.jpg', '_files')),
-            '/mnt/dzis1/{}'.format(new_filename + '_files'),
+            '/mnt/dzis/{}'.format(new_filename.replace('.jpg', '_files')),
+            '/mnt/dzis/{}'.format(new_filename + '_files'),
         )
 
     except Exception as e:

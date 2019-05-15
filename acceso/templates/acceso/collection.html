@@ -1,7 +1,6 @@
 {% extends 'acceso/base2.html' %}
 {% load i18n %}
 {% load static %}
-{% load plotly_dash %}
 {% block extra_static %}
 <script src="//code.jquery.com/jquery-3.3.1.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
@@ -10,7 +9,8 @@
 {% endblock %}
 
 {% block content2 %}
-
+<script src="https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly-locale-es-pe.js"></script>
+<script>Plotly.setPlotConfig({locale: 'es-PE'})</script>
 <style>
 #header {
 		background-image: url(https://archivogam.haverford.edu/static/pat_goudvis/{{ photo }});
@@ -137,9 +137,9 @@ table tbody th {
           <div class="container">
             <article id="main" class="special">
               <header>
-                <h2><a href="#">{% trans "Ubicación"%}</a></h2>
+                <h2>{% trans "LA COLECCIÓN"%}</h2>
                 <p>
-                  {% trans "Morbi convallis lectus malesuada sed fermentum dolore amet"%}
+                  {% trans "This is an overview of the dissapearances collection.  It's similar to an archival finding aid"%}
                 </p>
               </header>
 	{% if count_caja %}
@@ -147,14 +147,13 @@ table tbody th {
 	{% endif %}
 	<br>
 
-<!--{%plotly_app name="SimpleExample"%}-->
 <div class="tab">
 <ul class="tabs">
-		<li><a href="#">Over the Years</a></li>
-		<li><a href="#">Locations</a></li>
-		<li><a href="#">Age</a></li>
-		<li><a href="#">Gender</a></li>
-		<li><a href="#">Profession</a></li>
+		<li><a href="#">{% trans "Casos por año" %}</a></li>
+		<li><a href="#">{% trans "Casos por ubicación" %}</a></li>
+		<li><a href="#">{% trans "Edad" %}</a></li>
+		<li><a href="#">{% trans "Género" %}</a></li>
+		<li><a href="#">{% trans "Profesión" %}</a></li>
 	</ul>
 	<div class="tab_content">
 		<div class="tabs_item">
@@ -189,7 +188,7 @@ var selectorOptions = {
 };
 var data = [{ mode: 'lines', x: {{ x_first | safe }}, y: {{y_first | safe }} }];
     var layout = {
-        title: 'Number of Missing People Over The Years',
+        title: '{% trans "Número de personas desaparecidas por año" %}',
         xaxis: {
             rangeselector: selectorOptions,
             rangeslider: {}
@@ -199,7 +198,7 @@ var data = [{ mode: 'lines', x: {{ x_first | safe }}, y: {{y_first | safe }} }];
         }
     };
 
-Plotly.plot('graphDiv', data, layout);
+Plotly.plot('graphDiv', data, layout, {locale: 'es-PE'});
 window.onresize = function() {
   Plotly.relayout('graphDiv', {
     width: 0.9 * window.innerWidth,
@@ -402,35 +401,7 @@ window.onresize = function() {
 	</div>
 	</div>
 </div>
-<!--		{% if graph %}
-<div style="width:600;height:500">
-{{ graph|safe }}
-</div>
-{% endif %}
 
-{% if geo %}
-<div style="width:600;height:500">
-{{ geo|safe }}
-</div>
-{% endif %}
-
-{% if age %}
-<div style="width:600;height:500">
-{{ age|safe }}
-</div>
-{% endif %}
-
-{% if gender %}
-<div style="width:600;height:500">
-{{ gender|safe }}
-</div>
-{% endif %}
-
-{% if pro %}
-<div style="width:600;height:500">
-{{ pro |safe }}
-</div>
-{% endif %}-->
 <table class="table table-condensed">
     <caption>Details of the Cases</caption>
     <tbody>

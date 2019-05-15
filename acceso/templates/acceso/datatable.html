@@ -45,6 +45,8 @@ $(document).ready(function() {
     $('.myTable').dataTable( {
         "pageLength": 10,
         "responsive": true,
+	"search": {
+	},
         {% if LANGUAGE_CODE == 'es' %}
     "language": {
         "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"

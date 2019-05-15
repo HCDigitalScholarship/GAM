@@ -157,9 +157,6 @@ def skynet(request):
 
 	return render(request, 'acceso/skynet.html', {'photo':photoclean})
 
-def about(request):
-	photo = random_photo()
-	return render(request, 'acceso/about.html', {'photo':photo})
 
 def network(request):
 	return render(request, 'acceso/red.html',)
@@ -190,11 +187,6 @@ def documentos(request):
 		for imagen in image:
 			imagen_names.append(imagen.nombre_del_archivo)
 	return render(request, 'acceso/documentos.html', {'state':imagen_names, })
-
-
-def history(request):
-	photo = random_photo()
-	return render(request, 'acceso/history.html', {'photo':photo})
 
 
 def caso(request, caso):
