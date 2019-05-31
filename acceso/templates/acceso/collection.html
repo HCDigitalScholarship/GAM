@@ -125,7 +125,6 @@ table tbody th {
   <!-- Inner -->
         <div class="inner">
     <hr />
-    <h4>{% trans "Casos del diario militar en los archivos del GAM" %}</h4>
 
     <a href="#main"><i class="fa fa-angle-double-down" style="font-size:58px;"></i></a>
       </div>
@@ -138,8 +137,7 @@ table tbody th {
             <article id="main" class="special">
               <header>
                 <h2>{% trans "LA COLECCIÓN"%}</h2>
-                <p>
-                  {% trans "This is an overview of the dissapearances collection.  It's similar to an archival finding aid"%}
+                <p>{% trans "El contenido de la colección esta formado en su mayoría por casos de desapariciones forzadas y otras  violaciones a los derechos humanos. A continuación se presentan los datos generales del contenido de la colección."%}
                 </p>
               </header>
 	{% if count_caja %}
@@ -159,6 +157,7 @@ table tbody th {
 		<div class="tabs_item">
 			{% if graph %}
 <div id="graphDiv" style="width:100%;height:100%">
+<p>TEST</p>
 {{graph|safe }}
 <script>
 var selectorOptions = {
@@ -211,8 +210,8 @@ window.onresize = function() {
 		</div>
 		<div class="tabs_item">
 			{% if geo %}
+<p> ADD DESCRIPTION FOR GEO HERE</p> <!-- maybe increase font size -->
 <div id="graphDivgeo">
-
 <script>
 var data_geo = [{
         type: 'scattermapbox',
@@ -281,6 +280,7 @@ window.onresize = function() {
 		</div>
 	<div class="tabs_item">
 		{% if age %}
+<p>DESC FOR AGE GRAPH</p>
 <div id="graphDivage">
 <!--{{ age|safe }}-->
 
@@ -312,6 +312,7 @@ window.onresize = function() {
 
 	<div class="tabs_item">
 	{% if gender %}
+<p>DESC FOR GENDER GRAPH</p>
 <div id="graphDivgender">
 <!--{{ gender|safe }}-->
 <script>
@@ -333,9 +334,9 @@ window.onresize = function() {
 
 	<div class="tabs_item">
 	{% if pro %}
+<p>DESC FOR PROFESSION GRAPH</p>
 <div id="graphDivpro" style="width:800px;height:600px">
 <!--{{ pro |safe }}-->
-
 <script>
 var trace = {
 	x: {{ se|safe }},
