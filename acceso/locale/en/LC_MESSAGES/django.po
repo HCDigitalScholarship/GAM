@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-29 20:13+0000\n"
+"POT-Creation-Date: 2019-06-03 12:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,32 +21,26 @@ msgstr ""
 #: acceso/templates/acceso/about.html:27
 msgid "Sobre los archivos del GAM"
 msgstr "About the GAM files"
-#. Autotranslated
 
 #: acceso/templates/acceso/about.html:38
 msgid "Founder 1"
 msgstr "Founder 1"
-#. Autotranslated
 
 #: acceso/templates/acceso/about.html:48
 msgid "Founder 2"
 msgstr "Founder 2"
-#. Autotranslated
 
 #: acceso/templates/acceso/about.html:58
 msgid "Founder 3"
 msgstr "Founder 3"
-#. Autotranslated
 
 #: acceso/templates/acceso/about.html:75
 msgid "Notable Members"
 msgstr "Notable Members"
-#. Autotranslated
 
 #: acceso/templates/acceso/about.html:78
 msgid "Intro to notable members"
 msgstr "Intro to notable members"
-#. Autotranslated
 
 #: acceso/templates/acceso/about.html:85 acceso/templates/acceso/about.html:94
 #: acceso/templates/acceso/about.html:103
@@ -54,196 +48,308 @@ msgstr "Intro to notable members"
 #: acceso/templates/acceso/about.html:121
 msgid "member 1"
 msgstr "member 1"
-#. Autotranslated
 
 #: acceso/templates/acceso/about.html:96 acceso/templates/acceso/about.html:114
 #: acceso/templates/acceso/about.html:123
 msgid "Amet nullam fringilla nibh nulla convallis tique ante proin."
 msgstr "Amet nullam fringilla nibh nulla convallis tique before proin."
-#. Autotranslated
 
 #: acceso/templates/acceso/about.html:105
 msgid "Amet nullam fringilla nibh nulla convallis tique ante proin. "
 msgstr "Amet nullam fringilla nibh nulla convallis tique before proin."
-#. Autotranslated
 
 #: acceso/templates/acceso/about.html:128
 msgid "Magna Adipiscing"
 msgstr "Magna Adipiscing"
-#. Autotranslated
 
 #: acceso/templates/acceso/about.html:135
 msgid "Our Mission"
 msgstr "Nuestra Missión"
 
-#: acceso/templates/acceso/about.html:149 acceso/templates/acceso/map.html:52
+#: acceso/templates/acceso/about.html:149
 msgid "Ultrices tempor sagittis nisl"
 msgstr "Ultrices tempor sagittis nisl"
-#. Autotranslated
 
-#: acceso/templates/acceso/about.html:166 acceso/templates/acceso/map.html:69
+#: acceso/templates/acceso/about.html:166
 msgid "Augue euismod feugiat tempus"
 msgstr "Augue euismod feugiat tempus"
-#. Autotranslated
 
-#: acceso/templates/acceso/base.html:57 acceso/templates/acceso/navbar.html:48
-msgid "Idioma"
-msgstr "Language"
-
-#: acceso/templates/acceso/base.html:69 acceso/templates/acceso/navbar.html:35
-msgid "Sobre"
-msgstr "About Us"
-
-#: acceso/templates/acceso/base.html:72 acceso/templates/acceso/navbar.html:32
-msgid "Inicio"
-msgstr "Home"
-
-#: acceso/templates/acceso/base.html:75 acceso/templates/acceso/history.html:39
-#: acceso/templates/acceso/index.html:50 acceso/templates/acceso/navbar.html:39
-msgid "Historia"
-msgstr "History"
-
-#: acceso/templates/acceso/base.html:78 acceso/templates/acceso/navbar.html:42
-msgid "Mapa"
-msgstr "Map"
-
-#: acceso/templates/acceso/caso.html:48
+#: acceso/templates/acceso/caso.html:23
 msgid "Una descripción general"
 msgstr "General Description"
 
-#: acceso/templates/acceso/caso.html:94
+#: acceso/templates/acceso/caso.html:71
 msgid "Archivos Dentro del Caso"
 msgstr "Files in the Case"
 
-#: acceso/templates/acceso/caso.html:108
-msgid "Metadatos sobre el caso"
-msgstr "Metadata about the case"
+#: acceso/templates/acceso/caso.html:147
+msgid "Cerrar la tabla"
+msgstr ""
 
-#: acceso/templates/acceso/caso.html:112
+#: acceso/templates/acceso/caso.html:151
 msgid "Typo de información"
 msgstr "Type of Information"
 
-#: acceso/templates/acceso/caso.html:113
+#: acceso/templates/acceso/caso.html:152
 msgid "Contenido"
 msgstr "Content"
+
+#: acceso/templates/acceso/caso.html:157
+msgid "Nombre"
+msgstr ""
+
+#: acceso/templates/acceso/caso.html:161
+msgid "Segundo"
+msgstr ""
+
+#: acceso/templates/acceso/caso.html:165
+msgid "Apellido Paterno"
+msgstr ""
+
+#: acceso/templates/acceso/caso.html:169
+msgid "Apellido Materno"
+msgstr ""
+
+#: acceso/templates/acceso/caso.html:173
+#, fuzzy
+#| msgid "fecha de desaparicion"
+msgid "Fecha de Nacimiento"
+msgstr "date of disappearance"
+
+#: acceso/templates/acceso/caso.html:177
+#, fuzzy
+#| msgid "fecha de desaparicion"
+msgid "Fecha de desaparición"
+msgstr "date of disappearance"
+
+#: acceso/templates/acceso/caso.html:181
+msgid "Edad en el Momento"
+msgstr ""
+
+#: acceso/templates/acceso/caso.html:185
+#: acceso/templates/acceso/collection.html:154
+msgid "Género"
+msgstr ""
+
+#: acceso/templates/acceso/caso.html:189
+msgid "Etnicidad"
+msgstr ""
+
+#: acceso/templates/acceso/caso.html:193
+#: acceso/templates/acceso/collection.html:155
+msgid "Profesión"
+msgstr ""
+
+#: acceso/templates/acceso/caso.html:198
+msgid "Actividaded Políticas"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:140
+msgid "LA COLECCIÓN"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:141
+msgid ""
+"El contenido de la colección esta formado en su mayoría por casos de "
+"desapariciones forzadas y otras  violaciones a los derechos humanos. A "
+"continuación se presentan los datos generales del contenido de la colección."
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:151
+msgid "Casos por año"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:152
+#, fuzzy
+#| msgid "Ubicación"
+msgid "Casos por ubicación"
+msgstr "Location"
+
+#: acceso/templates/acceso/collection.html:153
+msgid "Edad"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:192
+msgid "Número de personas desaparecidas por año"
+msgstr ""
+
+#: acceso/templates/acceso/datatable.html:26
+msgid ""
+"Esta base de datos ofrece una lista de todos los casos en la colección de "
+"desapariciones en los archivos históricos del Grupo de Apoyo Mutuo. La "
+"colección aún se está procesando y los materiales más precisos y "
+"actualizados se pueden encontrar contactando al GAM."
+msgstr ""
+
+#: acceso/templates/acceso/filtrar_imagenes.html:14
+#: acceso/templates/acceso/index.html:15
+msgid "Una historia de desapariciones en Guatemala"
+msgstr "A history of disapearances in Guatemala"
+
+#: acceso/templates/acceso/filtrar_imagenes.html:15
+#: acceso/templates/acceso/index.html:16
+msgid "comienzo"
+msgstr "Begin "
+
+#: acceso/templates/acceso/filtrar_imagenes.html:37
+msgid "Casos del diario militar en los archivos del GAM"
+msgstr "Cases of the military newspaper in the archives of the GAM"
+
+#: acceso/templates/acceso/filtrar_imagenes.html:283
+msgid "Back to Top"
+msgstr ""
+
+#: acceso/templates/acceso/filtrar_imagenes.html:286
+msgid "Photos"
+msgstr ""
+
+#: acceso/templates/acceso/filtrar_imagenes.html:290
+#: acceso/templates/acceso/index.html:162
+msgid "Buscar"
+msgstr "Search for"
+
+#: acceso/templates/acceso/filtrar_imagenes.html:326
+msgid "Go to Case"
+msgstr ""
+
+#: acceso/templates/acceso/filtrar_imagenes.html:581
+msgid "Open the image"
+msgstr ""
 
 #: acceso/templates/acceso/footer.html:46
 #: acceso/templates/acceso/footer.html:71
 msgid "COMO APOYAR"
 msgstr "HOW TO SUPPORT"
-#. Autotranslated
 
 #: acceso/templates/acceso/footer.html:47
 #: acceso/templates/acceso/footer.html:72
 msgid "¿Cómo donar?"
 msgstr "How to donate?"
-#. Autotranslated
 
 #: acceso/templates/acceso/footer.html:48
 #: acceso/templates/acceso/footer.html:73
 msgid "Voluntariado"
 msgstr "Volunteering"
-#. Autotranslated
 
 #: acceso/templates/acceso/footer.html:52
 #: acceso/templates/acceso/footer.html:76
 msgid "CONTÁCTANOS"
 msgstr "CONTACT US"
-#. Autotranslated
 
 #: acceso/templates/acceso/footer.html:53
 #: acceso/templates/acceso/footer.html:77
 msgid "  8a calle 3-11 Zona 1"
 msgstr "8th Street 3-11 Zone 1"
-#. Autotranslated
 
 #: acceso/templates/acceso/footer.html:83
 msgid "SÍGUENOS"
 msgstr "FOLLOW US"
-#. Autotranslated
 
 #: acceso/templates/acceso/history.html:25
 msgid "La historia del GAM"
 msgstr "The history of GAM"
-#. Autotranslated
+
+#: acceso/templates/acceso/history.html:39
+msgid "Historia"
+msgstr "History"
 
 #: acceso/templates/acceso/history.html:41
 msgid "Section picture"
 msgstr "Section picture"
-#. Autotranslated
 
 #: acceso/templates/acceso/history.html:55
 msgid "Section 1"
 msgstr "Section 1"
-#. Autotranslated
 
 #: acceso/templates/acceso/history.html:76
 msgid "Section 2"
 msgstr "Section 2"
-#. Autotranslated
 
-#: acceso/templates/acceso/index.html:15
-msgid "Una historia de desapariciones en Guatemala"
-msgstr "A history of disapearances in Guatemala"
-
-#: acceso/templates/acceso/index.html:16
-msgid "comienzo"
-msgstr "Begin "
-
-#: acceso/templates/acceso/index.html:40 acceso/templates/acceso/map.html:24
-msgid "Casos del diario militar en los archivos del GAM"
-msgstr "Cases of the military newspaper in the archives of the GAM"
-#. Autotranslated
-
-#: acceso/templates/acceso/index.html:52
-msgid ""
-"Sobre la historia  summary aenean eu aenean mollis mollis facilisis primis "
-"ornare penatibus aenean. Cursus ac enim pulvinar curabitur morbi convallis. "
-"Lectus malesuada sed fermentum dolore amet."
+#: acceso/templates/acceso/index.html:47
+msgid "¿Qué es el Archivo Histórico del GAM?"
 msgstr ""
 
-#: acceso/templates/acceso/index.html:56
-msgid "Sigue Leyendo Sobre la Historia"
-msgstr "Continue Reading About the History"
+#: acceso/templates/acceso/index.html:48
+msgid ""
+"Es un esfuerzo de rescate de miles de documentos, los cuales contienen los "
+"testimonios de las víctimas de violaciones de derechos humanos durante el "
+"Conflicto Armado Interno en Guatemala. Este archivo busca dar acceso  "
+"virtual a una colección de documentos que narran los hechos vividos por las "
+"víctimas durante ese periodo. Nuestro objetivo es permitir que las historias "
+"de los hechos sucedidos, sean conocidas desde los testimonios de los "
+"familiares y contribuyan a la dignificación de la memoria de sus seres "
+"queridos. "
+msgstr ""
 
 #: acceso/templates/acceso/index.html:156
-msgid "Casos"
-msgstr "Cases"
-#. Autotranslated
+msgid "Acceso"
+msgstr ""
 
-#: acceso/templates/acceso/index.html:160
-msgid "Buscar"
-msgstr "Search for"
-#. Autotranslated
+#: acceso/templates/acceso/index.html:157
+msgid ""
+"Si usted búsca un caso particular, debe de ingresar el nombre de la persona, "
+"y en caso de encontrarlo en  nuestros registros digitales, puede ponerse en "
+"contacto con nosotros para mayor informacion sobre el caso."
+msgstr ""
 
-#: acceso/templates/acceso/index.html:168
-msgid "filtrar"
-msgstr "filter"
-#. Autotranslated
+#: acceso/templates/acceso/index.html:206
+msgid "leer más aquí"
+msgstr ""
 
-#: acceso/templates/acceso/index.html:176
-msgid "ordenar"
-msgstr "order"
-#. Autotranslated
+#: acceso/templates/acceso/navbar.html:32
+msgid "Inicio"
+msgstr "Home"
 
-#: acceso/templates/acceso/index.html:179
-msgid "sin clasificar"
-msgstr "unclassified"
-#. Autotranslated
+#: acceso/templates/acceso/navbar.html:36
+msgid "la colección"
+msgstr ""
 
-#: acceso/templates/acceso/index.html:182
-msgid "fecha de desaparicion"
-msgstr "date of disappearance"
-#. Autotranslated
+#: acceso/templates/acceso/navbar.html:39
+msgid "Buscador de casos"
+msgstr ""
 
-#: acceso/templates/acceso/map.html:36
-msgid "Ubicación"
-msgstr "Location"
+#: acceso/templates/acceso/navbar.html:41
+msgid "Las Imagenes"
+msgstr ""
 
-#: acceso/templates/acceso/map.html:38
-msgid "Morbi convallis lectus malesuada sed fermentum dolore amet"
-msgstr "Morbi convallis lectus malaise sed fermentum dolore amet"
-#. Autotranslated
+#: acceso/templates/acceso/navbar.html:45
+msgid "documentos"
+msgstr ""
+
+#: acceso/templates/acceso/navbar.html:52
+msgid "Idioma"
+msgstr "Language"
+
+#: acceso/templates/acceso/skynet.html:28
+msgid "Hello I'm skynet"
+msgstr ""
+
+#~ msgid "Sobre"
+#~ msgstr "About Us"
+
+#~ msgid "Mapa"
+#~ msgstr "Map"
+
+#~ msgid "Metadatos sobre el caso"
+#~ msgstr "Metadata about the case"
+
+#~ msgid "Sigue Leyendo Sobre la Historia"
+#~ msgstr "Continue Reading About the History"
+
+#~ msgid "Casos"
+#~ msgstr "Cases"
+
+#~ msgid "filtrar"
+#~ msgstr "filter"
+
+#~ msgid "ordenar"
+#~ msgstr "order"
+
+#~ msgid "sin clasificar"
+#~ msgstr "unclassified"
+
+#~ msgid "Morbi convallis lectus malesuada sed fermentum dolore amet"
+#~ msgstr "Morbi convallis lectus malaise sed fermentum dolore amet"
 
 #~ msgid "La History"
 #~ msgstr "The History"

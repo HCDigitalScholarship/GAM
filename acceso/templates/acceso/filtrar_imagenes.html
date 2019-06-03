@@ -32,10 +32,6 @@
     <div id="header">
   <!-- Inner -->
         <div class="inner">
-
-    <hr />
-    <h4>{% trans "Casos del diario militar en los archivos del GAM" %}</h4>
-
     <a href="#main"><i class="fa fa-angle-double-down" style="font-size:58px;"></i></a>
       </div>
   </div>
@@ -312,28 +308,29 @@ img.hover-shadow {
 
 <div class="container">
   <div id="grid" class="row my-shuffle-container">
-   {% for photo, caso in photo_list.items %}
-   <figure class="picture-item" data-groups="{{ photo|filters }}">
+   {% for tuple in photo_list %}
+   <figure class="picture-item" data-groups="">
       <div class="picture-item__inner hover-shadow">
         <div class="aspect aspect--16x9"> <!-- 16x9 -->
           <div class="aspect__inner" style="border: black; border-width: 5px; border-style: solid;">
-		    <img class="lazy cursor" data-src="{% static "diario_militar/" %}{{ photo.file|add:".jpg" }}" alt="{{ photo.folder }}" onclick="openModal();currentSlide({{ forloop.counter }})"/>
+		    <img class="lazy cursor" data-src="{% static "miniatura/" %}{{ tuple.1.file }}" alt="{{ photo.folder }}" onclick="openModal();currentSlide({{ forloop.counter }})"/>
           </div>
         </div>
       </div>
 	  <div class="picture-item__title" style="display: block; overflow: hidden;">
    	    <p>
-		<a href="https://archivogam.haverford.edu/acceso/caso/{{ caso.slug_name }}" target="_blank" title='{% trans "Go to Case" %}'>
-	        {{ caso.nombre_del_caso}}
+		<a href="https://archivogam.haverford.edu/acceso/caso/{{ tuple.0.slug_name }}" target="_blank" title='{% trans "Go to Case" %}'>
+	        {{ tuple.0 }}
 	      </a>
 		</p>
-		<p> {{ photo.folder }}</p>
+		<p> {{ tuple.1.folder }}</p>
 		<p style="display: block; line-height: 0; height: 0; overflow: hidden;">
-		  {{ caso.descripción|striptags|safe }}
+		  {{ tuple.0.descripción|striptags|safe }}
 		</p>
 	  </div>
     </figure>
    {% endfor %}
+
 
     <div class="col-1@sm col-1@xs my-sizer-element"></div>
   </div>
@@ -347,7 +344,7 @@ img.hover-shadow {
 	  {% for photo, caso in photo_list.items %}	  
 	  <div class="mySlides" style="height:100%; width:100%;">	
 	    <div class="numbertext">{{ forloop.counter }} / {{ photo_list|length }}</div>
-	    <img class="lazy-lg" data-src="{% static "diario_militar/lg_img/" %}{{ photo.file|add:".jpg" }}" style="width:75%; height:100%; margin-left: auto; margin-right:auto; margin-top: auto">
+	    <img class="lazy-lg" data-src="{% static "imagens/" %}{{ photo.file }}" style="width:75%; height:100%; margin-left: auto; margin-right:auto; margin-top: auto">
 	  </div>
 	  {% endfor %}
 
@@ -363,7 +360,7 @@ img.hover-shadow {
 	  <!-- Thumnail image controls -->
       {% for photo, caso in photo_list.items %}
       <div class="modal-column">
-	    <img class="demo cursor" src="{% static "diario_militar/" %}{{ photo.file|add:".jpg" }}" onclick="currentSlide({{ forloop.counter }})" alt="{{ photo.folder }}">
+	    <img class="demo cursor" src="{% static "miniatura/" %}{{ photo.file }}" onclick="currentSlide({{ forloop.counter }})" alt="{{ photo.folder }}">
 	  </div>
 	  {% endfor %}
     </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-29 20:13+0000\n"
+"POT-Creation-Date: 2019-06-03 12:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgstr "Previous"
 #: gam_app/templates/procesamiento.html:39
 #: gam_app/templates/procesamiento.html:49
 msgid "Siguiente"
-msgstr "Following"
+msgstr "Next"
 
 #: gam_app/templates/all_documents_page.html:71
 #: gam_app/templates/app_documents_temp.html:60
@@ -102,7 +102,7 @@ msgstr "Image Filename"
 #: gam_app/templates/grandes_colecciones.html:195
 #: gam_app/templates/personal_explorar.html:81
 #: gam_app/templates/publico_explorar.html:79
-#: gam_app/templates/search_result_page.html:338
+#: gam_app/templates/search_result_page.html:337
 msgid "Inicia sesión para ver este contenido"
 msgstr "Login to view this content"
 
@@ -450,6 +450,10 @@ msgstr "Organizations"
 #: gam_app/templates/navbar.html:82
 msgid "Sobre"
 msgstr "About"
+
+#: gam_app/templates/navbar.html:84
+msgid "Acceso"
+msgstr ""
 
 #: gam_app/templates/navbar.html:87
 msgid "Buscar"
