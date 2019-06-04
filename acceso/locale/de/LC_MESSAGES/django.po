@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-03 12:56+0000\n"
+"POT-Creation-Date: 2019-06-04 13:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,59 +18,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: acceso/templates/acceso/about.html:27
+#: acceso/templates/acceso/about.html:26
 msgid "Sobre los archivos del GAM"
 msgstr "Über die GAM-Dateien"
 
-#: acceso/templates/acceso/about.html:38
+#: acceso/templates/acceso/about.html:37
 msgid "Founder 1"
 msgstr "Gründer 1"
 
-#: acceso/templates/acceso/about.html:48
+#: acceso/templates/acceso/about.html:47
 msgid "Founder 2"
 msgstr "Gründer 2"
 
-#: acceso/templates/acceso/about.html:58
+#: acceso/templates/acceso/about.html:57
 msgid "Founder 3"
 msgstr "Gründer 3"
 
-#: acceso/templates/acceso/about.html:75
+#: acceso/templates/acceso/about.html:74
 msgid "Notable Members"
 msgstr "Bemerkenswerte Mitglieder"
 
-#: acceso/templates/acceso/about.html:78
+#: acceso/templates/acceso/about.html:77
 msgid "Intro to notable members"
 msgstr "Intro für namhafte Mitglieder"
 
-#: acceso/templates/acceso/about.html:85 acceso/templates/acceso/about.html:94
-#: acceso/templates/acceso/about.html:103
-#: acceso/templates/acceso/about.html:112
-#: acceso/templates/acceso/about.html:121
+#: acceso/templates/acceso/about.html:84 acceso/templates/acceso/about.html:93
+#: acceso/templates/acceso/about.html:102
+#: acceso/templates/acceso/about.html:111
+#: acceso/templates/acceso/about.html:120
 msgid "member 1"
 msgstr "Mitglied 1"
 
-#: acceso/templates/acceso/about.html:96 acceso/templates/acceso/about.html:114
-#: acceso/templates/acceso/about.html:123
+#: acceso/templates/acceso/about.html:95 acceso/templates/acceso/about.html:113
+#: acceso/templates/acceso/about.html:122
 msgid "Amet nullam fringilla nibh nulla convallis tique ante proin."
 msgstr "Amet nullam fringilla nibh nulla convallis tique vor dem Pro"
 
-#: acceso/templates/acceso/about.html:105
+#: acceso/templates/acceso/about.html:104
 msgid "Amet nullam fringilla nibh nulla convallis tique ante proin. "
 msgstr "Amet nullam fringilla nibh nulla convallis tique vor dem Pro"
 
-#: acceso/templates/acceso/about.html:128
+#: acceso/templates/acceso/about.html:127
 msgid "Magna Adipiscing"
 msgstr "Magna Adipiscing"
 
-#: acceso/templates/acceso/about.html:135
+#: acceso/templates/acceso/about.html:134
 msgid "Our Mission"
 msgstr "Unsere Mission"
 
-#: acceso/templates/acceso/about.html:149
+#: acceso/templates/acceso/about.html:148
 msgid "Ultrices tempor sagittis nisl"
 msgstr "Ultrices tempor sagittis nisl"
 
-#: acceso/templates/acceso/about.html:166
+#: acceso/templates/acceso/about.html:165
 msgid "Augue euismod feugiat tempus"
 msgstr "Augu euismod feugiat tempus"
 
@@ -87,7 +87,9 @@ msgid "Cerrar la tabla"
 msgstr "Schließen Sie den Tisch"
 
 #: acceso/templates/acceso/caso.html:151
-msgid "Typo de información"
+#, fuzzy
+#| msgid "Typo de información"
+msgid "Tipo de información"
 msgstr "Art der Informationen"
 
 #: acceso/templates/acceso/caso.html:152
@@ -127,7 +129,6 @@ msgid "Edad en el Momento"
 msgstr "Alter im Moment"
 
 #: acceso/templates/acceso/caso.html:185
-#: acceso/templates/acceso/collection.html:154
 msgid "Género"
 msgstr "Geschlecht"
 
@@ -136,7 +137,6 @@ msgid "Etnicidad"
 msgstr "Ethnizität"
 
 #: acceso/templates/acceso/caso.html:193
-#: acceso/templates/acceso/collection.html:155
 msgid "Profesión"
 msgstr "Beruf"
 
@@ -144,33 +144,72 @@ msgstr "Beruf"
 msgid "Actividaded Políticas"
 msgstr "Actividaded-Richtlinien"
 
-#: acceso/templates/acceso/collection.html:140
+#: acceso/templates/acceso/collection.html:129
 msgid "LA COLECCIÓN"
 msgstr ""
 
-#: acceso/templates/acceso/collection.html:141
+#: acceso/templates/acceso/collection.html:130
 msgid ""
 "El contenido de la colección esta formado en su mayoría por casos de "
 "desapariciones forzadas y otras  violaciones a los derechos humanos. A "
 "continuación se presentan los datos generales del contenido de la colección."
 msgstr ""
 
-#: acceso/templates/acceso/collection.html:151
-msgid "Casos por año"
+#: acceso/templates/acceso/collection.html:171
+msgid "Número de personas desaparecidas por año"
 msgstr ""
 
-#: acceso/templates/acceso/collection.html:152
-#, fuzzy
-#| msgid "Ubicación"
-msgid "Casos por ubicación"
-msgstr "Standort"
+#: acceso/templates/acceso/collection.html:221
+#: acceso/templates/acceso/collection.html:224
+msgid "Número de personas"
+msgstr ""
 
-#: acceso/templates/acceso/collection.html:153
+#: acceso/templates/acceso/collection.html:227
+#, fuzzy
+#| msgid "fecha de desaparicion"
+msgid "Lugar de desaparicion"
+msgstr "Datum des Verschwindens"
+
+#: acceso/templates/acceso/collection.html:279
+#, fuzzy
+#| msgid "fecha de desaparicion"
+msgid "Edad cuando desapareció"
+msgstr "Datum des Verschwindens"
+
+#: acceso/templates/acceso/collection.html:280
 msgid "Edad"
 msgstr ""
 
-#: acceso/templates/acceso/collection.html:192
-msgid "Número de personas desaparecidas por año"
+#: acceso/templates/acceso/collection.html:280
+msgid "Número de personas desaparecidas"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:298
+msgid "Género de los desaparecidos"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:328
+msgid "Profesión de personas desaparecidas"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:391
+msgid "Detalles de los casos"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:394
+msgid "Descripción física"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:396
+msgid "casos totales"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:401
+msgid "Contar"
+msgstr ""
+
+#: acceso/templates/acceso/collection.html:403
+msgid "cajas"
 msgstr ""
 
 #: acceso/templates/acceso/datatable.html:26
@@ -191,28 +230,24 @@ msgstr "Eine Geschichte des Verschwindens in Gautemala"
 msgid "comienzo"
 msgstr "Starten"
 
-#: acceso/templates/acceso/filtrar_imagenes.html:37
-msgid "Casos del diario militar en los archivos del GAM"
-msgstr "Fälle der Militärzeitung im Archiv der GAM"
-
-#: acceso/templates/acceso/filtrar_imagenes.html:283
+#: acceso/templates/acceso/filtrar_imagenes.html:279
 msgid "Back to Top"
 msgstr ""
 
-#: acceso/templates/acceso/filtrar_imagenes.html:286
+#: acceso/templates/acceso/filtrar_imagenes.html:282
 msgid "Photos"
 msgstr ""
 
-#: acceso/templates/acceso/filtrar_imagenes.html:290
-#: acceso/templates/acceso/index.html:162
+#: acceso/templates/acceso/filtrar_imagenes.html:286
+#: acceso/templates/acceso/index.html:163
 msgid "Buscar"
 msgstr "Suche"
 
-#: acceso/templates/acceso/filtrar_imagenes.html:326
+#: acceso/templates/acceso/filtrar_imagenes.html:322
 msgid "Go to Case"
 msgstr ""
 
-#: acceso/templates/acceso/filtrar_imagenes.html:581
+#: acceso/templates/acceso/filtrar_imagenes.html:578
 msgid "Open the image"
 msgstr ""
 
@@ -222,8 +257,9 @@ msgid "COMO APOYAR"
 msgstr "WIE UNTERSTÜTZEN?"
 
 #: acceso/templates/acceso/footer.html:47
-#: acceso/templates/acceso/footer.html:72
-msgid "¿Cómo donar?"
+#, fuzzy
+#| msgid "¿Cómo donar?"
+msgid "Como donar"
 msgstr "Wie spenden?"
 
 #: acceso/templates/acceso/footer.html:48
@@ -240,6 +276,10 @@ msgstr "KONTAKTIEREN SIE UNS"
 #: acceso/templates/acceso/footer.html:77
 msgid "  8a calle 3-11 Zona 1"
 msgstr "8. Straße 3-11 Zone 1"
+
+#: acceso/templates/acceso/footer.html:72
+msgid "¿Cómo donar?"
+msgstr "Wie spenden?"
 
 #: acceso/templates/acceso/footer.html:83
 msgid "SÍGUENOS"
@@ -281,10 +321,6 @@ msgid ""
 "queridos. "
 msgstr ""
 
-#: acceso/templates/acceso/index.html:156
-msgid "Acceso"
-msgstr ""
-
 #: acceso/templates/acceso/index.html:157
 msgid ""
 "Si usted búsca un caso particular, debe de ingresar el nombre de la persona, "
@@ -292,37 +328,45 @@ msgid ""
 "contacto con nosotros para mayor informacion sobre el caso."
 msgstr ""
 
-#: acceso/templates/acceso/index.html:206
+#: acceso/templates/acceso/index.html:207
 msgid "leer más aquí"
 msgstr "Lesen Sie hier mehr"
 
-#: acceso/templates/acceso/navbar.html:32
+#: acceso/templates/acceso/navbar.html:34
 msgid "Inicio"
 msgstr "Startseite"
 
-#: acceso/templates/acceso/navbar.html:36
+#: acceso/templates/acceso/navbar.html:38
 msgid "la colección"
 msgstr "die Sammlung"
 
-#: acceso/templates/acceso/navbar.html:39
+#: acceso/templates/acceso/navbar.html:41
 msgid "Buscador de casos"
 msgstr "Suche nach Fällen"
 
-#: acceso/templates/acceso/navbar.html:41
+#: acceso/templates/acceso/navbar.html:43
 msgid "Las Imagenes"
 msgstr ""
 
-#: acceso/templates/acceso/navbar.html:45
+#: acceso/templates/acceso/navbar.html:47
 msgid "documentos"
 msgstr "Dokumente"
 
-#: acceso/templates/acceso/navbar.html:52
+#: acceso/templates/acceso/navbar.html:54
 msgid "Idioma"
 msgstr "Sprache"
 
 #: acceso/templates/acceso/skynet.html:28
 msgid "Hello I'm skynet"
 msgstr "Hallo, ich bin Skynet"
+
+#, fuzzy
+#~| msgid "Ubicación"
+#~ msgid "Casos por ubicación"
+#~ msgstr "Standort"
+
+#~ msgid "Casos del diario militar en los archivos del GAM"
+#~ msgstr "Fälle der Militärzeitung im Archiv der GAM"
 
 #~ msgid "Morbi convallis lectus malesuada sed fermentum dolore amet"
 #~ msgstr "Morbi convallis lectus malaise sed fermentum dolore amet"

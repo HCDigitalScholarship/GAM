@@ -276,8 +276,8 @@ img.hover-shadow {
 }
 </style>
 
-<button onclick="topFunction()" id="myBtn" title="Go to top">{% trans "Back to Top" %}</button>
-
+<button onclick="topFunction()" id="myBtn" title="Go to top">{% trans "Volver arriba" %}</button>
+<br>
 <div class="container">
   <h2><a href="#">{% trans "Photos" %} </a></h2>
   <div class="row">
@@ -341,10 +341,10 @@ img.hover-shadow {
   <span class="close cursor" onclick="closeModal()">&times;</span>
   <div class="modal-content">
 	<div class="modal-image" style="height:100%; width:100%;">
-	  {% for photo, caso in photo_list.items %}	  
+	  {% for tuple in photo_list %}
 	  <div class="mySlides" style="height:100%; width:100%;">	
 	    <div class="numbertext">{{ forloop.counter }} / {{ photo_list|length }}</div>
-	    <img class="lazy-lg" data-src="{% static "imagens/" %}{{ photo.file }}" style="width:75%; height:100%; margin-left: auto; margin-right:auto; margin-top: auto">
+	    <img class="lazy-lg" data-src="{% static "imagens/" %}{{ tuple.1.file }}" style="width:75%; height:100%; margin-left: auto; margin-right:auto; margin-top: auto">
 	  </div>
 	  {% endfor %}
 
@@ -358,9 +358,9 @@ img.hover-shadow {
     </div>
 	<div class="thumbnail-control">
 	  <!-- Thumnail image controls -->
-      {% for photo, caso in photo_list.items %}
+      {% for tuple in photo_list %}
       <div class="modal-column">
-	    <img class="demo cursor" src="{% static "miniatura/" %}{{ photo.file }}" onclick="currentSlide({{ forloop.counter }})" alt="{{ photo.folder }}">
+	    <img class="demo cursor" src="{% static "miniatura/" %}{{ tuple.1.file }}" onclick="currentSlide({{ forloop.counter }})" alt="{{ photo.folder }}">
 	  </div>
 	  {% endfor %}
     </div>

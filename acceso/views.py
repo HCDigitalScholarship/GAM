@@ -124,10 +124,16 @@ def main(request, options):
 
     return render(request, 'acceso/index.html', context)
 
+def todo_documentos(request):
+    photo = random_photo()
+    photos = Photo.objects.all()
+    todo_imagens = [Imagen.objects.get(nombre_del_archivo=photo.file) for photo in photos]
+    context = {'todo_imagens': todo_imagens, 'photo': photo}
+    return render(request, 'acceso/todo_documentos.html', context)
 
 def filtrar_imagenes(request):
     photo_mostrar = random_photo()
-    filter_list = ["none"]
+    filter_list = []
     photos = Photo.objects.all().order_by('file')
     photo_dict = {}
     for photo in photos:

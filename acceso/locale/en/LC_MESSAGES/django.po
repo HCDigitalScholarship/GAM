@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-03 12:56+0000\n"
+"POT-Creation-Date: 2019-06-04 13:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,59 +18,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: acceso/templates/acceso/about.html:27
+#: acceso/templates/acceso/about.html:26
 msgid "Sobre los archivos del GAM"
-msgstr "About the GAM files"
+msgstr "About the GAM Digital archive"
 
-#: acceso/templates/acceso/about.html:38
+#: acceso/templates/acceso/about.html:37
 msgid "Founder 1"
 msgstr "Founder 1"
 
-#: acceso/templates/acceso/about.html:48
+#: acceso/templates/acceso/about.html:47
 msgid "Founder 2"
 msgstr "Founder 2"
 
-#: acceso/templates/acceso/about.html:58
+#: acceso/templates/acceso/about.html:57
 msgid "Founder 3"
 msgstr "Founder 3"
 
-#: acceso/templates/acceso/about.html:75
+#: acceso/templates/acceso/about.html:74
 msgid "Notable Members"
 msgstr "Notable Members"
 
-#: acceso/templates/acceso/about.html:78
+#: acceso/templates/acceso/about.html:77
 msgid "Intro to notable members"
 msgstr "Intro to notable members"
 
-#: acceso/templates/acceso/about.html:85 acceso/templates/acceso/about.html:94
-#: acceso/templates/acceso/about.html:103
-#: acceso/templates/acceso/about.html:112
-#: acceso/templates/acceso/about.html:121
+#: acceso/templates/acceso/about.html:84 acceso/templates/acceso/about.html:93
+#: acceso/templates/acceso/about.html:102
+#: acceso/templates/acceso/about.html:111
+#: acceso/templates/acceso/about.html:120
 msgid "member 1"
 msgstr "member 1"
 
-#: acceso/templates/acceso/about.html:96 acceso/templates/acceso/about.html:114
-#: acceso/templates/acceso/about.html:123
+#: acceso/templates/acceso/about.html:95 acceso/templates/acceso/about.html:113
+#: acceso/templates/acceso/about.html:122
 msgid "Amet nullam fringilla nibh nulla convallis tique ante proin."
 msgstr "Amet nullam fringilla nibh nulla convallis tique before proin."
 
-#: acceso/templates/acceso/about.html:105
+#: acceso/templates/acceso/about.html:104
 msgid "Amet nullam fringilla nibh nulla convallis tique ante proin. "
 msgstr "Amet nullam fringilla nibh nulla convallis tique before proin."
 
-#: acceso/templates/acceso/about.html:128
+#: acceso/templates/acceso/about.html:127
 msgid "Magna Adipiscing"
 msgstr "Magna Adipiscing"
 
-#: acceso/templates/acceso/about.html:135
+#: acceso/templates/acceso/about.html:134
 msgid "Our Mission"
 msgstr "Nuestra Missión"
 
-#: acceso/templates/acceso/about.html:149
+#: acceso/templates/acceso/about.html:148
 msgid "Ultrices tempor sagittis nisl"
 msgstr "Ultrices tempor sagittis nisl"
 
-#: acceso/templates/acceso/about.html:166
+#: acceso/templates/acceso/about.html:165
 msgid "Augue euismod feugiat tempus"
 msgstr "Augue euismod feugiat tempus"
 
@@ -80,14 +80,16 @@ msgstr "General Description"
 
 #: acceso/templates/acceso/caso.html:71
 msgid "Archivos Dentro del Caso"
-msgstr "Files in the Case"
+msgstr "Documents from the Case"
 
 #: acceso/templates/acceso/caso.html:147
 msgid "Cerrar la tabla"
-msgstr ""
+msgstr "Close the table"
 
 #: acceso/templates/acceso/caso.html:151
-msgid "Typo de información"
+#, fuzzy
+#| msgid "Typo de información"
+msgid "Tipo de información"
 msgstr "Type of Information"
 
 #: acceso/templates/acceso/caso.html:152
@@ -96,25 +98,25 @@ msgstr "Content"
 
 #: acceso/templates/acceso/caso.html:157
 msgid "Nombre"
-msgstr ""
+msgstr "Name"
 
 #: acceso/templates/acceso/caso.html:161
 msgid "Segundo"
-msgstr ""
+msgstr "Middle Name"
 
 #: acceso/templates/acceso/caso.html:165
 msgid "Apellido Paterno"
-msgstr ""
+msgstr "Paternal Family Name"
 
 #: acceso/templates/acceso/caso.html:169
 msgid "Apellido Materno"
-msgstr ""
+msgstr "Maternal Family Name"
 
 #: acceso/templates/acceso/caso.html:173
 #, fuzzy
 #| msgid "fecha de desaparicion"
 msgid "Fecha de Nacimiento"
-msgstr "date of disappearance"
+msgstr "date of birth"
 
 #: acceso/templates/acceso/caso.html:177
 #, fuzzy
@@ -124,54 +126,94 @@ msgstr "date of disappearance"
 
 #: acceso/templates/acceso/caso.html:181
 msgid "Edad en el Momento"
-msgstr ""
+msgstr "age at the time"
 
 #: acceso/templates/acceso/caso.html:185
-#: acceso/templates/acceso/collection.html:154
 msgid "Género"
-msgstr ""
+msgstr "gender"
 
 #: acceso/templates/acceso/caso.html:189
 msgid "Etnicidad"
-msgstr ""
+msgstr "ethnicity"
 
 #: acceso/templates/acceso/caso.html:193
-#: acceso/templates/acceso/collection.html:155
 msgid "Profesión"
-msgstr ""
+msgstr "profession"
 
 #: acceso/templates/acceso/caso.html:198
 msgid "Actividaded Políticas"
-msgstr ""
+msgstr "political activities"
 
-#: acceso/templates/acceso/collection.html:140
+#: acceso/templates/acceso/collection.html:129
 msgid "LA COLECCIÓN"
-msgstr ""
+msgstr "THE COLLECTION"
 
-#: acceso/templates/acceso/collection.html:141
+#: acceso/templates/acceso/collection.html:130
 msgid ""
 "El contenido de la colección esta formado en su mayoría por casos de "
 "desapariciones forzadas y otras  violaciones a los derechos humanos. A "
 "continuación se presentan los datos generales del contenido de la colección."
 msgstr ""
+"This collection contains cases of forced disappearances and other violations "
+"of human rights. The following is an outline of the contents of the "
+"collection."
 
-#: acceso/templates/acceso/collection.html:151
-msgid "Casos por año"
-msgstr ""
-
-#: acceso/templates/acceso/collection.html:152
-#, fuzzy
-#| msgid "Ubicación"
-msgid "Casos por ubicación"
-msgstr "Location"
-
-#: acceso/templates/acceso/collection.html:153
-msgid "Edad"
-msgstr ""
-
-#: acceso/templates/acceso/collection.html:192
+#: acceso/templates/acceso/collection.html:171
 msgid "Número de personas desaparecidas por año"
-msgstr ""
+msgstr "Number of disappeared persons by year"
+
+#: acceso/templates/acceso/collection.html:221
+#: acceso/templates/acceso/collection.html:224
+msgid "Número de personas"
+msgstr "Number of people"
+
+#: acceso/templates/acceso/collection.html:227
+#, fuzzy
+#| msgid "fecha de desaparicion"
+msgid "Lugar de desaparicion"
+msgstr "Place of disappearance"
+
+#: acceso/templates/acceso/collection.html:279
+#, fuzzy
+#| msgid "fecha de desaparicion"
+msgid "Edad cuando desapareció"
+msgstr "Age of the disappeared"
+
+#: acceso/templates/acceso/collection.html:280
+msgid "Edad"
+msgstr "Age"
+
+#: acceso/templates/acceso/collection.html:280
+msgid "Número de personas desaparecidas"
+msgstr "Number of disappeared persons"
+
+#: acceso/templates/acceso/collection.html:298
+msgid "Género de los desaparecidos"
+msgstr "Disappeared persons by gender"
+
+#: acceso/templates/acceso/collection.html:328
+msgid "Profesión de personas desaparecidas"
+msgstr "Professions of the disappeared"
+
+#: acceso/templates/acceso/collection.html:391
+msgid "Detalles de los casos"
+msgstr "Details of the cases"
+
+#: acceso/templates/acceso/collection.html:394
+msgid "Descripción física"
+msgstr "Physical description"
+
+#: acceso/templates/acceso/collection.html:396
+msgid "casos totales"
+msgstr "total cases"
+
+#: acceso/templates/acceso/collection.html:401
+msgid "Contar"
+msgstr "Count"
+
+#: acceso/templates/acceso/collection.html:403
+msgid "cajas"
+msgstr "boxes"
 
 #: acceso/templates/acceso/datatable.html:26
 msgid ""
@@ -180,6 +222,10 @@ msgid ""
 "colección aún se está procesando y los materiales más precisos y "
 "actualizados se pueden encontrar contactando al GAM."
 msgstr ""
+"This database offers a list of all the cases in the collection of the "
+"disappearances in the historical archives of the Mutual Support Group (GAM). "
+"The collection is still being processed and more presice and actualized "
+"materials can be found by contacting the GAM."
 
 #: acceso/templates/acceso/filtrar_imagenes.html:14
 #: acceso/templates/acceso/index.html:15
@@ -191,30 +237,26 @@ msgstr "A history of disapearances in Guatemala"
 msgid "comienzo"
 msgstr "Begin "
 
-#: acceso/templates/acceso/filtrar_imagenes.html:37
-msgid "Casos del diario militar en los archivos del GAM"
-msgstr "Cases of the military newspaper in the archives of the GAM"
-
-#: acceso/templates/acceso/filtrar_imagenes.html:283
+#: acceso/templates/acceso/filtrar_imagenes.html:279
 msgid "Back to Top"
-msgstr ""
+msgstr "Volver arriba"
+
+#: acceso/templates/acceso/filtrar_imagenes.html:282
+msgid "Photos"
+msgstr "Fotos"
 
 #: acceso/templates/acceso/filtrar_imagenes.html:286
-msgid "Photos"
-msgstr ""
-
-#: acceso/templates/acceso/filtrar_imagenes.html:290
-#: acceso/templates/acceso/index.html:162
+#: acceso/templates/acceso/index.html:163
 msgid "Buscar"
 msgstr "Search for"
 
-#: acceso/templates/acceso/filtrar_imagenes.html:326
+#: acceso/templates/acceso/filtrar_imagenes.html:322
 msgid "Go to Case"
-msgstr ""
+msgstr "Ir a caso"
 
-#: acceso/templates/acceso/filtrar_imagenes.html:581
+#: acceso/templates/acceso/filtrar_imagenes.html:578
 msgid "Open the image"
-msgstr ""
+msgstr "Abrir el imagen"
 
 #: acceso/templates/acceso/footer.html:46
 #: acceso/templates/acceso/footer.html:71
@@ -222,8 +264,9 @@ msgid "COMO APOYAR"
 msgstr "HOW TO SUPPORT"
 
 #: acceso/templates/acceso/footer.html:47
-#: acceso/templates/acceso/footer.html:72
-msgid "¿Cómo donar?"
+#, fuzzy
+#| msgid "¿Cómo donar?"
+msgid "Como donar"
 msgstr "How to donate?"
 
 #: acceso/templates/acceso/footer.html:48
@@ -240,6 +283,10 @@ msgstr "CONTACT US"
 #: acceso/templates/acceso/footer.html:77
 msgid "  8a calle 3-11 Zona 1"
 msgstr "8th Street 3-11 Zone 1"
+
+#: acceso/templates/acceso/footer.html:72
+msgid "¿Cómo donar?"
+msgstr "How to donate?"
 
 #: acceso/templates/acceso/footer.html:83
 msgid "SÍGUENOS"
@@ -267,7 +314,7 @@ msgstr "Section 2"
 
 #: acceso/templates/acceso/index.html:47
 msgid "¿Qué es el Archivo Histórico del GAM?"
-msgstr ""
+msgstr "What is the GAM Historical Archive?"
 
 #: acceso/templates/acceso/index.html:48
 msgid ""
@@ -280,10 +327,13 @@ msgid ""
 "familiares y contribuyan a la dignificación de la memoria de sus seres "
 "queridos. "
 msgstr ""
-
-#: acceso/templates/acceso/index.html:156
-msgid "Acceso"
-msgstr ""
+"The GAM historical archive is an effort to rescue millions of documents "
+"which contain testimonies from the victims of humans rights violations "
+"during the Guatemalan Internal Armed Conflict. This archive looks to give "
+"virtual access to a collection of documents which narrate the events lived "
+"by the victims during this period. Our objective is to permit that the "
+"histories of the events are known from the testimonies of the families and "
+"that they contribute to the dignity and memory of the loved ones."
 
 #: acceso/templates/acceso/index.html:157
 msgid ""
@@ -291,38 +341,52 @@ msgid ""
 "y en caso de encontrarlo en  nuestros registros digitales, puede ponerse en "
 "contacto con nosotros para mayor informacion sobre el caso."
 msgstr ""
+"If you are looking for a particular case, enter the name of the person, and "
+"if you find a case in our digital archive, you can contact us to get more "
+"information about the care."
 
-#: acceso/templates/acceso/index.html:206
+#: acceso/templates/acceso/index.html:207
 msgid "leer más aquí"
-msgstr ""
+msgstr "read more here"
 
-#: acceso/templates/acceso/navbar.html:32
+#: acceso/templates/acceso/navbar.html:34
 msgid "Inicio"
 msgstr "Home"
 
-#: acceso/templates/acceso/navbar.html:36
+#: acceso/templates/acceso/navbar.html:38
 msgid "la colección"
-msgstr ""
-
-#: acceso/templates/acceso/navbar.html:39
-msgid "Buscador de casos"
-msgstr ""
+msgstr "the collection"
 
 #: acceso/templates/acceso/navbar.html:41
+msgid "Buscador de casos"
+msgstr "Search Cases"
+
+#: acceso/templates/acceso/navbar.html:43
 msgid "Las Imagenes"
-msgstr ""
+msgstr "Images"
 
-#: acceso/templates/acceso/navbar.html:45
+#: acceso/templates/acceso/navbar.html:47
 msgid "documentos"
-msgstr ""
+msgstr "Documents"
 
-#: acceso/templates/acceso/navbar.html:52
+#: acceso/templates/acceso/navbar.html:54
 msgid "Idioma"
 msgstr "Language"
 
 #: acceso/templates/acceso/skynet.html:28
 msgid "Hello I'm skynet"
-msgstr ""
+msgstr "Hola, so skynet"
+
+#~ msgid "Acceso"
+#~ msgstr "Access"
+
+#, fuzzy
+#~| msgid "Ubicación"
+#~ msgid "Casos por ubicación"
+#~ msgstr "Location"
+
+#~ msgid "Casos del diario militar en los archivos del GAM"
+#~ msgstr "Cases of the military newspaper in the archives of the GAM"
 
 #~ msgid "Sobre"
 #~ msgstr "About Us"

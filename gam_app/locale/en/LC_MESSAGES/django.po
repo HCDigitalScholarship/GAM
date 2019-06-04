@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-03 12:56+0000\n"
+"POT-Creation-Date: 2019-06-04 13:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -382,8 +382,10 @@ msgid ""
 msgstr ""
 
 #: gam_app/templates/index.html:121
-msgid "Haga clic aquí para crear una cuenta e iniciar sesión."
-msgstr "Click here to create an account and login."
+msgid ""
+"Haga clic aquí para obtener una descripción general de nuestras colecciones "
+"y ver los documentos que han sido aprobados para su visualización pública."
+msgstr ""
 
 #: gam_app/templates/item.html:36 gam_app/templates/item.html:45
 #: gam_app/templates/item.html:55
@@ -677,6 +679,9 @@ msgstr "imported"
 #: gam_app/templates/track_bags.html:34
 msgid "no importado"
 msgstr "not imported"
+
+#~ msgid "Haga clic aquí para crear una cuenta e iniciar sesión."
+#~ msgstr "Click here to create an account and login."
 
 #~ msgid "Agregar al portapapeles"
 #~ msgstr "Add to clipboard"
