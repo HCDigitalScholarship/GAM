@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-04 13:40+0000\n"
+"POT-Creation-Date: 2019-06-05 01:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,7 +167,7 @@ msgstr ""
 #: acceso/templates/acceso/collection.html:227
 #, fuzzy
 #| msgid "fecha de desaparicion"
-msgid "Lugar de desaparicion"
+msgid "Lugar de desaparición"
 msgstr "Datum des Verschwindens"
 
 #: acceso/templates/acceso/collection.html:279
@@ -231,7 +231,7 @@ msgid "comienzo"
 msgstr "Starten"
 
 #: acceso/templates/acceso/filtrar_imagenes.html:279
-msgid "Back to Top"
+msgid "Volver arriba"
 msgstr ""
 
 #: acceso/templates/acceso/filtrar_imagenes.html:282
