@@ -320,6 +320,7 @@ class Command(BaseCommand):
 
             shutil.rmtree('/mnt/bags/{}'.format(nombre_de_la_bolsa))
             os.system('s4cmd -r --verbose --config=/home/ajanco/.s3cfg --num-threads=6 --endpoint-url https://nyc3.digitaloceanspaces.com sync /mnt/dzis1/{}/  s3://dzis'.format(nombre_de_la_bolsa))
-            shutil.rmtree('/mnt/dzis1/{}'.format(numbre_de_la_bolsa))
+            print('empujó todas las imágenes al almacenamiento de objetos')
+            shutil.rmtree('/mnt/dzis1/{}'.format(nombre_de_la_bolsa))
         else:
             print('la bolsa no es valida')
