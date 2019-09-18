@@ -24,5 +24,8 @@ uwsgi_params
 /acceso/static/acceso/js/seadragon/images
 /media
 /acceso/static/pat_goudvis/
+/acceso/static/imagens/
+/acceso/static/miniatura/
+/acceso/static/diario_militar/
 *.mo
 /acceso/bokeh/

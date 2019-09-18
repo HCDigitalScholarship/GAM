@@ -1,0 +1,62 @@
+{% load i18n %}
+{% load static %}
+
+{% block extra_static %}
+<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
+{% endblock %}
+
+{% block content2 %}
+
+
+               <script type="text/javascript" src="{% static 'js/openseadragon.min.js' %}"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/Pin0/openseadragon-justified-collection/1.0.2/dist/openseadragon-justified-collection.min.js"></script>
+
+<span>
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/zoomin_rest.png' %}   id='zoom-in' class='sea-icon'>
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/zoomout_rest.png' %}  id='zoom-out' class='sea-icon'>
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/home_rest.png' %}     id='home'  class='sea-icon'>
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/fullpage_rest.png' %} id='full-page' class='sea-icon'  >
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/rotateleft_rest.png' %} id='left-rotate' class='sea-icon'>
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/rotateright_rest.png' %}     id='right-rotate' class='sea-icon'>
+</span>
+
+<div id="openseadragon1" style="width:100%; height: 100%;"></div>
+<script src="{% static 'js/openseadragon-viewerinputhook.min.js' %}"></script>
+
+
+          </div>
+
+        </div>
+
+
+
+<script type="text/javascript">
+var SRCS = [];
+
+{% for item in state %}
+SRCS.push("https://dzis.nyc3.digitaloceanspaces.com/{{ item }}.dzi")
+{% endfor %}
+</script>
+<script>
+  var viewer = OpenSeadragon({
+    id: "openseadragon1",
+    homeButton: "home",
+    zoomInButton: "zoom-in",
+    zoomOutButton: "zoom-out",
+    fullPageButton: "full-page",
+    rotateRightButton: "right-rotate",
+    rotateLeftButton: "left-rotate",
+
+    tileSources: SRCS,
+    crossOriginPolicy: 'Anonymous',
+    collectionColumns: 6,
+    collectionMode: true,
+    showRotationControl: true
+});
+</script>
+
+
+      
+{% endblock %}
