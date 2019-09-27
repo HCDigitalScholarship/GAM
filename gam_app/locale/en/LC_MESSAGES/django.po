@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-29 20:13+0000\n"
+"POT-Creation-Date: 2019-06-05 01:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgstr "Previous"
 #: gam_app/templates/procesamiento.html:39
 #: gam_app/templates/procesamiento.html:49
 msgid "Siguiente"
-msgstr "Following"
+msgstr "Next"
 
 #: gam_app/templates/all_documents_page.html:71
 #: gam_app/templates/app_documents_temp.html:60
@@ -102,7 +102,7 @@ msgstr "Image Filename"
 #: gam_app/templates/grandes_colecciones.html:195
 #: gam_app/templates/personal_explorar.html:81
 #: gam_app/templates/publico_explorar.html:79
-#: gam_app/templates/search_result_page.html:338
+#: gam_app/templates/search_result_page.html:337
 msgid "Inicia sesión para ver este contenido"
 msgstr "Login to view this content"
 
@@ -367,6 +367,10 @@ msgstr "Ethnicity"
 msgid "Buscar..."
 msgstr "Search"
 
+#: gam_app/templates/index.html:117
+msgid "Bienvenidos a los Archivos Digitales del Grupo de Apoyo Mutuo"
+msgstr "Welcome to the Digital Archives of the Mutual Support Group (GAM)"
+
 #: gam_app/templates/index.html:119
 msgid ""
 "El Grupo de Apoyo Mutuo</strong>&nbsp;es una organizaci&oacute;n de la "
@@ -380,10 +384,21 @@ msgid ""
 "&iacute;ndices de violencia actuales y monitoreo a las instituciones que "
 "conforman el sector de seguridad y justicia.&nbsp;"
 msgstr ""
+"The Mutual Support Group is a non-profit organization created in 1984 that "
+"brings together relatives of persons illegally detained and forcibly "
+"disappeared in Guatemala during the Civil War that lasted from 1960 to 1996. "
+"We seek justice for the disappeared and the dignification of the victims. "
+"The GAM was nominated for the Nobel Peace Prize in 1986. In addition, we "
+"prepare thematic reports related to current indices of violence and "
+"monitoring of institutions in the security and justice sector."
 
 #: gam_app/templates/index.html:121
-msgid "Haga clic aquí para crear una cuenta e iniciar sesión."
-msgstr "Click here to create an account and login."
+msgid ""
+"Haga clic aquí para obtener una descripción general de nuestras colecciones "
+"y ver los documentos que han sido aprobados para su visualización pública."
+msgstr ""
+"Click here for a general description of our collections and see the "
+"documents that have been approved for public viewing."
 
 #: gam_app/templates/item.html:36 gam_app/templates/item.html:45
 #: gam_app/templates/item.html:55
@@ -450,6 +465,10 @@ msgstr "Organizations"
 #: gam_app/templates/navbar.html:82
 msgid "Sobre"
 msgstr "About"
+
+#: gam_app/templates/navbar.html:84
+msgid "Acceso"
+msgstr ""
 
 #: gam_app/templates/navbar.html:87
 msgid "Buscar"
@@ -673,6 +692,9 @@ msgstr "imported"
 #: gam_app/templates/track_bags.html:34
 msgid "no importado"
 msgstr "not imported"
+
+#~ msgid "Haga clic aquí para crear una cuenta e iniciar sesión."
+#~ msgstr "Click here to create an account and login."
 
 #~ msgid "Agregar al portapapeles"
 #~ msgstr "Add to clipboard"

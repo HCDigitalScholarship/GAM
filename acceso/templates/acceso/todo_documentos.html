@@ -1,0 +1,133 @@
+{% load i18n %}
+{% load static %}
+<script src="{% static 'js/openseadragon.min.js' %}"></script>
+<script src="{% static 'js/openseadragon-viewerinputhook.min.js' %}"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/Pin0/openseadragon-justified-collection/1.0.2/dist/openseadragon-justified-collection.min.js"></script>
+<script src="{% static 'js/openseadragon-viewerinputhook.min.js' %}"></script>
+
+<span>
+  <img src={% static 'openseadragon-flat-toolbar-icons/images/zoomin_rest.png' %} id='zoom-in' class='sea-icon'>
+  <img src={% static 'openseadragon-flat-toolbar-icons/images/zoomout_rest.png' %} id='zoom-out' class='sea-icon'>
+  <img src={% static 'openseadragon-flat-toolbar-icons/images/home_rest.png' %} id='home'  class='sea-icon'>
+  <img src={% static 'openseadragon-flat-toolbar-icons/images/fullpage_rest.png' %} id='full-page' class='sea-icon'  >
+  <img src={% static 'openseadragon-flat-toolbar-icons/images/rotateleft_rest.png' %} id='left-rotate' class='sea-icon'>
+  <img src={% static 'openseadragon-flat-toolbar-icons/images/rotateright_rest.png' %} id='right-rotate' class='sea-icon'>
+</span>
+
+
+ <div class="col" style="background-color:#ffffff; height: 450px;">
+    <div id="openseadragon1" style="width:100%; height: 200%;"></div>
+
+  </div>
+<script>
+// This script initializes variables that require Django templating features, which is why it
+// is inline and not in gam_app/js/procesamiento.js like the rest of the code.
+
+var EDIT_BUTTON_URL = "";
+
+// We need a better way of doing this.
+var ITEMS = [];
+var SRCS = [];
+{% for item in todo_imagens %}
+ITEMS.push([
+    "{{ item.nombre_del_archivo }}",
+    "",
+    ""
+]);
+//SRCS.push("/dzi/{{ item.nombre_del_archivo }}.dzi")
+SRCS.push("https://dzis.nyc3.digitaloceanspaces.com/{{ item.nombre_del_archivo }}.dzi")
+{% endfor %}
+</script>
+
+
+<script>
+
+var viewer = OpenSeadragon({
+    id: "openseadragon1",
+    homeButton: "home",
+    zoomInButton: "zoom-in",
+    zoomOutButton: "zoom-out",
+    fullPageButton: "full-page",
+    rotateRightButton: "right-rotate",
+    rotateLeftButton: "left-rotate",
+
+    tileSources: SRCS,
+    crossOriginPolicy: 'Anonymous',
+    collectionColumns: 6,
+    collectionMode: true,
+    showRotationControl: true
+});
+
+
+viewer.world.addHandler("add-item", function (event) {
+    var tiledImage = event.item;
+    tiledImage.addHandler("fully-loaded-change", function() {
+        // Wait until the images are fully loaded to add the link overlays.
+        if (areAllFullyLoaded()) {
+            var count = viewer.world.getItemCount();
+            for (var i = 0; i < count; i++) {
+                var tiledImage = viewer.world.getItemAt(i);
+                
+            }
+        }
+    });
+});
+
+
+function areAllFullyLoaded() {
+    var count = viewer.world.getItemCount();
+    for (var i = 0; i < count; i++) {
+        var tiledImage = viewer.world.getItemAt(i);
+        if (!tiledImage.getFullyLoaded()) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+function addLinkOverlay(image, link, name) {
+    var imageRect = image.getBounds();
+    var rect = new OpenSeadragon.Rect(imageRect.x, imageRect.y, 0.2, 0.2);
+
+    var divElement = document.createElement("div");
+    var buttonElement = document.createElement("a");
+    var imgElement = document.createElement("img");
+    imgElement.src = EDIT_BUTTON_URL;
+    buttonElement.href = link;
+    buttonElement.appendChild(imgElement);
+    divElement.appendChild(buttonElement);
+
+    var markElement = document.createElement("mark");
+    var textElement = document.createTextNode(name);
+    markElement.appendChild(textElement);
+    divElement.appendChild(markElement);
+    viewer.addOverlay(divElement, rect, OpenSeadragon.OverlayPlacement.CENTER);
+
+    viewer.addViewerInputHook({
+        hooks: [{
+            tracker: "viewer",
+            handler: "clickHandler",
+            hookHandler: function (event) {
+              event.preventDefaultAction = true;
+              var pos = viewer.viewport.viewerElementToViewportCoordinates(event.position);
+              if (isPointInsideRect(pos, rect.clone())) {
+                  window.location.href = link;
+              }
+            },
+        }]
+    });
+
+    viewer.viewport.goHome()
+}
+
+
+function isPointInsideRect(point, rect) {
+    return (
+        point.x > rect.x && point.x < rect.x + rect.width
+        && point.y > rect.y && point.y < rect.y + rect.height
+    );
+}
+
+
+</script>

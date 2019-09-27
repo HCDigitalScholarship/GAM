@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-15 14:55+0000\n"
+"POT-Creation-Date: 2019-06-05 01:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,7 +104,7 @@ msgstr "Bildnummer"
 #: gam_app/templates/grandes_colecciones.html:195
 #: gam_app/templates/personal_explorar.html:81
 #: gam_app/templates/publico_explorar.html:79
-#: gam_app/templates/search_result_page.html:338
+#: gam_app/templates/search_result_page.html:337
 msgid "Inicia sesión para ver este contenido"
 msgstr "Logge dich ein, um diesen Inhalt zu sehen"
 
@@ -357,6 +357,10 @@ msgstr "Ethnizität"
 msgid "Buscar..."
 msgstr "Suche ..."
 
+#: gam_app/templates/index.html:117
+msgid "Bienvenidos a los Archivos Digitales del Grupo de Apoyo Mutuo"
+msgstr ""
+
 #: gam_app/templates/index.html:119
 msgid ""
 "El Grupo de Apoyo Mutuo</strong>&nbsp;es una organizaci&oacute;n de la "
@@ -372,8 +376,10 @@ msgid ""
 msgstr ""
 
 #: gam_app/templates/index.html:121
-msgid "Haga clic aquí para crear una cuenta e iniciar sesión."
-msgstr "Klicken Sie hier, um ein Konto zu erstellen und sich anzumelden."
+msgid ""
+"Haga clic aquí para obtener una descripción general de nuestras colecciones "
+"y ver los documentos que han sido aprobados para su visualización pública."
+msgstr ""
 
 #: gam_app/templates/item.html:36 gam_app/templates/item.html:45
 #: gam_app/templates/item.html:55
@@ -659,6 +665,9 @@ msgstr "importiert"
 #: gam_app/templates/track_bags.html:34
 msgid "no importado"
 msgstr "nicht importiert"
+
+#~ msgid "Haga clic aquí para crear una cuenta e iniciar sesión."
+#~ msgstr "Klicken Sie hier, um ein Konto zu erstellen und sich anzumelden."
 
 #~ msgid "Error, por favor intente nuevamente o inicie sesión"
 #~ msgstr "Fehler, bitte versuchen Sie es erneut oder melden Sie sich an"

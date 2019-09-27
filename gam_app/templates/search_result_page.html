@@ -163,6 +163,7 @@
 <div class="tab-content">
 <div id="tab1-slug" class="tab-pane fade in active">
 <!-- result table -->
+<div class="row">
 <div style="width:60%; float: left;">
 <table class="myTable">
 <thead>
@@ -280,7 +281,7 @@ $(document).ready( function () {
 <br>
 <br>
 
-
+</div>
 </div>
 
 <div id="tab2-slug" class="tab-pane fade">
@@ -333,7 +334,6 @@ SRCS.push("https://dzis.nyc3.digitaloceanspaces.com/{{ object.nombre_del_archivo
 </div>
 </div>
 </div>
-
 {% else %}
   <p>{% trans "Inicia sesión para ver este contenido" %}</p>
 {% endif %}
