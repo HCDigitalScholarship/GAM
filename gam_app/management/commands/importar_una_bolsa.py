@@ -319,8 +319,8 @@ class Command(BaseCommand):
             [import_resumen_file(file) for file in txt_files]
 
             shutil.rmtree('/mnt/bags/{}'.format(nombre_de_la_bolsa))
-            os.system('s4cmd -r --verbose --config=/home/ajanco/.s3cfg --num-threads=6 --endpoint-url https://nyc3.digitaloceanspaces.com sync /mnt/dzis1/{}/  s3://dzis'.format(nombre_de_la_bolsa))
-            print('empujó todas las imágenes al almacenamiento de objetos')
-            shutil.rmtree('/mnt/dzis1/{}'.format(nombre_de_la_bolsa))
+            os.system('s4cmd -r --verbose --config=/home/ajanco/.s3cfg --API-ACL=public-read --num-threads=6 --retry=10 --endpoint-url https://nyc3.digitaloceanspaces.com sync /mnt/dzis1/{}/  s3://dzis'.format(nombre_de_la_bolsa))
+            print('se transferió a todas las imágenes al almacenamiento de objetos')
+            #shutil.rmtree('/mnt/dzis1/{}'.format(nombre_de_la_bolsa))
         else:
             print('la bolsa no es valida')
