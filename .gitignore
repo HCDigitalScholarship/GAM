@@ -25,5 +25,8 @@ uwsgi_params
 /acceso/migrations/
 /media
 /acceso/static/pat_goudvis/
+/acceso/static/imagens/
+/acceso/static/miniatura/
+/acceso/static/diario_militar/
 *.mo
 /acceso/bokeh/

@@ -1,0 +1,524 @@
+{% extends 'acceso/base2.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_static %}
+<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock %}
+
+{% block content2 %}
+<script src="https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly-locale-es-pe.js"></script>
+<script>Plotly.setPlotConfig({locale: 'es-PE'})</script>
+<style>
+#header {
+		background-image: url(https://archivogam.haverford.edu/static/pat_goudvis/{{ photo }});
+	}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.tab {
+  /*padding-top: 50px;*/
+  margin-bottom: 20px;
+  position: static;
+  /*overflow: hidden;*/
+  background: #fff;
+  width: 70%;
+  /*margin: 0 auto;*/
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #888;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabs {
+  display: table;
+  position: static;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+}
+.tabs li {
+  float: left;
+  line-height: 38px;
+  overflow: hidden;
+  padding: 0;
+  position: static;
+}
+.tabs a {
+  background-color: #eff0f2;
+  border-bottom: 1px solid #fff;
+  color: #888;
+  font-weight: 500;
+  display: block;
+  letter-spacing: 0;
+  outline: none;
+  padding: 0 20px;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid #ffec00;
+}
+
+.tabs_item {
+display: none;
+padding: 40px 0;
+}
+
+.tabs_item:first-child {
+  display: block;
+}
+
+.current a {
+  color: black;
+  background: #ffec00;
+}
+
+.asset-details th {
+    padding-left: 0;
+}
+
+.asset-details th {
+    vertical-align: top;
+    text-align: left;
+    padding: .5em;
+    min-width: 6em;
+    font-weight: 400;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: black;
+ /*   border: none;*/
+}
+
+td, th {
+/*    display: table-cell;*/
+   /* border: none;*/
+    vertical-align: inherit;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    /*border-color: inherit;*/
+}
+table tbody th {
+    border-right: none;
+}
+/*@media only screen and (max-width: 600px){
+.js-plotly-plot,
+.plot-container {
+          width: 400px
+}
+
+
+}*/
+</style>
+<body class="homepage is-preload">
+  <div id="page-wrapper">
+    <!-- Header -->
+    <div id="header">
+  <!-- Inner -->
+        <div class="inner">
+    <hr />
+
+    <a href="#main"><i class="fa fa-angle-double-down" style="font-size:58px;"></i></a>
+      </div>
+  </div>
+      <!-- Main -->
+      
+        <div class="wrapper style1">
+
+          <div class="container">
+            <article id="main" class="special">
+              <header>
+                <h2>{% trans "LA COLECCIÓN"%}</h2>
+                <p>{% trans "El contenido de la colección esta formado en su mayoría por casos de desapariciones forzadas y otras  violaciones a los derechos humanos. A continuación se presentan los datos generales del contenido de la colección."%}
+                </p>
+              </header>
+	{% if count_caja %}
+	<p> {{ count_caja }} </p>
+	{% endif %}
+	<br>
+
+<div class="tab">
+<ul class="tabs">
+		<li><a href="#">{% trans "Casos por año" %}</a></li>
+		<li><a href="#">{% trans "Casos por ubicación" %}</a></li>
+		<li><a href="#">{% trans "Edad" %}</a></li>
+		<li><a href="#">{% trans "Género" %}</a></li>
+		<li><a href="#">{% trans "Profesión" %}</a></li>
+	</ul>
+	<div class="tab_content">
+		<div class="tabs_item">
+			{% if graph %}
+<div id="graphDiv" style="width:100%;height:100%">
+<p>TEST</p>
+{{graph|safe }}
+<script>
+var selectorOptions = {
+    buttons: [{
+        step: 'month',
+        stepmode: 'backward',
+        count: 1,
+        label: '1m'
+    }, {
+        step: 'month',
+        stepmode: 'backward',
+        count: 6,
+        label: '6m'
+    }, {
+        step: 'year',
+        stepmode: 'todate',
+        count: 1,
+        label: 'YTD'
+    }, {
+        step: 'year',
+        stepmode: 'backward',
+        count: 1,
+        label: '1y'
+    }, {
+        step: 'all',
+    }],
+};
+var data = [{ mode: 'lines', x: {{ x_first | safe }}, y: {{y_first | safe }} }];
+    var layout = {
+        title: '{% trans "Número de personas desaparecidas por año" %}',
+        xaxis: {
+            rangeselector: selectorOptions,
+            rangeslider: {}
+        },
+        yaxis: {
+            fixedrange: true
+        }
+    };
+
+Plotly.plot('graphDiv', data, layout, {locale: 'es-PE'});
+window.onresize = function() {
+  Plotly.relayout('graphDiv', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  })
+};
+</script>
+</div>
+{% endif %}
+		</div>
+		<div class="tabs_item">
+			{% if geo %}
+<div id="graphDivgeo">
+<p> ADD DESCRIPTION FOR GEO HERE</p> <!-- maybe increase font size -->
+var data_geo = [{
+        type: 'scattermapbox',
+        mode: 'markers',
+        text: {{ geo_text|safe}},
+        lon: {{ geo_lon | safe }},
+        lat: {{ geo_lat | safe }},
+        marker: {
+          color: {{ geo_counts | safe }},
+          colorscale: {{ geo_colorscale | safe }},
+          cmin: 1,
+          cmax: {{ geo_cmax | safe }},
+          reversescale: true,
+	  autocolorscale: false,
+          //opacity: 0.5,
+          size: 8,
+	  line: {width:1, color:'rgba(102, 102, 102)'},
+          colorbar:{
+            /*thickness: 10,
+            titleside: 'right',
+            outlinecolor: 'rgba(102, 102, 102)',
+            ticks: 'outside',
+            ticklen: 3,
+            shoticksuffix: 'last',
+            ticksuffix: 'inches',
+            dtick: 0.1*/
+	    title:"Number of People"
+          }
+        },
+        name: 'Number of People'
+    }];
+var layout_geo = {
+      dragmode: 'zoom',
+      mapbox: {
+        center: {
+          lat: {{ center_lat|safe}},
+          lon: {{ center_lon|safe}}
+        },
+	pitch:0,
+    zoom:6
+
+},
+margin: {
+      r: 50,
+      t: 50,
+      b: 50,
+      l: 50,
+      pad: 0
+    },
+      showlegend: false
+   };
+Plotly.setPlotConfig({
+    mapboxAccessToken: 'pk.eyJ1Ijoic2Z4aWEiLCJhIjoiY2p0eXFmbXhkMThwczN5cnpoY3V2NXM2OSJ9.y1v1n6o9IQ8q-7xiYE6zNw'
+  });
+
+    Plotly.newPlot('graphDivgeo', data_geo, layout_geo);
+window.onresize = function() {
+  Plotly.relayout('graphDivgeo', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  })
+};
+</script>
+</div>
+{% endif %}
+		</div>
+	<div class="tabs_item">
+		{% if age %}
+<div id="graphDivage">
+<!--{{ age|safe }}-->
+
+<script>
+var trace = {
+  x: {{ sell }},
+  y: {{ count }},
+  mode: 'markers',
+  type: 'scatter',
+  marker: { size: 12 } 
+};
+
+var data = [trace];
+var layout = {
+ title: "Age vs Missing Numbers",
+ xaxis: {title: "Age", }, yaxis: {"title": "Number of Missing People"}};
+
+Plotly.newPlot('graphDivage', data, layout);
+window.onresize = function() {
+  Plotly.relayout('graphDivage', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  })
+};
+</script> 
+</div>
+{% endif %}
+	</div>
+
+	<div class="tabs_item">
+	{% if gender %}
+<div id="graphDivgender">
+<!--{{ gender|safe }}-->
+<script>
+var layout = {title: 'Gender vs Missing People',
+               showlegend: true, width: 800, height: 600};
+Plotly.newPlot('graphDivgender', {{gender_data | safe}}, layout);
+window.onresize = function() {
+  Plotly.relayout('graphDivgender', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  })
+};
+
+</script>
+
+</div>
+{% endif %}
+	</div>
+
+	<div class="tabs_item">
+	{% if pro %}
+<div id="graphDivpro" style="width:800px;height:600px">
+<!--{{ pro |safe }}-->
+
+<script>
+var trace = {
+	x: {{ se|safe }},
+	y: {{ cou | safe }},
+	mode: 'markers',
+	type: 'scatter'
+}
+
+var data = [trace];
+var layout = {title: 'Gender vs Missing People',
+               showlegend: true, width: 800, height: 600};
+Plotly.newPlot('graphDivpro', data, {{layout_pro | safe}});
+window.onresize = function() {
+  Plotly.relayout('graphDivpro', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  })
+}
+window.onresize = function() {
+  Plotly.relayout('graphDiv', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  })
+}
+window.onresize = function() {
+  Plotly.relayout('graphDivgeo', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  })
+}
+window.onresize = function() {
+  Plotly.relayout('graphDivgender', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  })
+}
+window.onresize = function() {
+  Plotly.relayout('graphDivage', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  });
+  Plotly.relayout('graphDivgender', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  });
+  Plotly.relayout('graphDivgeo', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  });
+  Plotly.relayout('graphDiv', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  });
+  Plotly.relayout('graphDivpro', {
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
+  })
+};
+</script>
+
+</div>
+{% endif %}
+	</div>
+	</div>
+</div>
+
+<table class="table table-condensed">
+    <caption>Details of the Cases</caption>
+    <tbody>
+<tr>
+                <td class="text-right"><span class="text-right bold-martinique">Physical Description:</span></th>
+                <td class="text-left"><span class="text-left">
+                    {{ files }} Total Files </span>
+                </td>
+            </tr>
+
+<tr>
+                <td class="text-right"><span class="text-right bold-martinique">Count:</span></th>
+                <td class="text-left"><span class="text-left">
+                    {{ caja }} Legal Archives Box </span>
+                </td>
+            </tr>
+
+            </tbody>
+</table>
+
+<div class="tab">
+
+	<ul class="tabs">
+		{% for key, value in cases.items %}
+			<li><a href="#">Shelving {{ key }}</a></li>
+		{% endfor %}
+	</ul> <!-- / tabs -->
+
+	<div class="tab_content">
+		{% for key, value in cases.items %}
+			<div class="tabs_item">
+				<table class="table table-condensed">
+    <tbody>
+<tr>
+                <th class="text-right"><span class="text-right bold-martinique">Dates:</span></th>
+                <td class="text-left"><span class="text-left">
+                    {{ value.0 }}</span>
+                </td>
+            </tr>
+
+<tr>
+                <th class="text-right"><span class="text-right bold-martinique">Plato count:</span></th>
+                <td class="text-left"><span class="text-left">
+                    {{ value.1 }}</span>
+                </td>
+            </tr>
+
+		<th class="text-right"><span class="text-right bold-martinique">Caja count:</span></th>
+                <td class="text-left"><span class="text-left">
+                    {{ value.2 }}</span>
+                </td>
+            </tr>
+
+            </tbody>
+</table>
+			</div> <!-- / tabs_item -->
+
+		{% endfor %}
+	</div> <!-- / tab_content -->
+</div> <!-- / tab -->	
+              <h3>{% trans "Carpetas" %}</h3>
+
+
+              <section>
+                <header>
+                  <h3>{% trans "Ultrices tempor sagittis nisl"%}</h3>
+                </header>
+                <p>
+                  {% trans "Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
+                  at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
+                  feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
+                  fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
+                  egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna."%}
+                </p>
+                <p>
+                  {% trans "Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
+                  orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
+                  ut penatibus fermentum nibh erat malesuada varius."%}
+                </p>
+              </section>
+              <section>
+                <header>
+                  <h3>{% trans "Augue euismod feugiat tempus"%}</h3>
+                </header>
+                <p>
+                  {% trans "Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
+                  feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
+                  ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
+                  egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna."%}
+                </p>
+              </section>
+            </article>
+            <hr />
+
+          </div>
+
+        </div>
+<script>
+$(document).ready(function() { 
+
+	(function ($) { 
+		$('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+		
+		$('.tab ul.tabs li a').click(function (g) { 
+			var tab = $(this).closest('.tab'), 
+				index = $(this).closest('li').index();
+			
+			tab.find('ul.tabs > li').removeClass('current');
+			$(this).closest('li').addClass('current');
+			
+			tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+			tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+			
+			g.preventDefault();
+		} );
+	})(jQuery);
+
+
+});
+/*	Plotly.relayout(graphDiv, {responsive: true}); */
+</script>
+{% endblock %}
