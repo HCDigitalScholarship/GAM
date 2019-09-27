@@ -11,8 +11,6 @@ app_name = "acceso"
 urlpatterns = [
     path('', views.main,{'options': True},name='index'),
     path('table/', views.main,{'options': False},name='table'),
-    path('about/', views.about, name='about'),
-    path('history/', views.history, name='history'),
     #path('colección/', views.collection, name='collection'),
     path('caso/<caso>', views.caso, name='caso'),
     path('simple/', views.simple, name='simple'),
@@ -31,5 +29,6 @@ urlpatterns = [
         name='db_list_json',
     ),
     path('documentos/', views.documentos, name='documentos'),
+    path('todo_documentos/', views.todo_documentos, name='todo_documentos'),
     path('filtrar_imagenes/', views.filtrar_imagenes, name='filtrar_imagenes'),
 ]

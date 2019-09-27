@@ -6,19 +6,21 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-{% endblock %}https://archivogam.haverford.edu/es/acceso/buscador-de-casos/#
+{% endblock %}
 
 {% block content2 %}
 <script src="https://raw.githubusercontent.com/plotly/plotly.js/master/dist/plotly-locale-es-pe.js"></script>
 <script>Plotly.setPlotConfig({locale: 'es-PE'})</script>
 <style>
-
+#header {
+		background-image: url(https://archivogam.haverford.edu/static/pat_goudvis/{{ photo }});
+	}
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 .tab {
   /*padding-top: 50px;*/
   margin-bottom: 20px;
-  position: relative;
+  position: static;
   /*overflow: hidden;*/
   background: #fff;
   width: 70%;
@@ -32,11 +34,10 @@
 
 .tabs {
   display: table;
-  position: relative;
+  position: static;
   overflow: hidden;
+  margin: 0;
   width: 100%;
-  left: 50%;
-  margin-left: -280px;
 }
 .tabs li {
   float: left;
@@ -108,17 +109,26 @@ tbody {
 table tbody th {
     border-right: none;
 }
+/*@media only screen and (max-width: 600px){
+.js-plotly-plot,
+.plot-container {
+          width: 400px
+}
 
-#header {
-		background-image: url(https://archivogam.haverford.edu/static/pat_goudvis/{{ photo }});
-	}
 
-
+}*/
 </style>
 <body class="homepage is-preload">
   <div id="page-wrapper">
     <!-- Header -->
+    <div id="header">
+  <!-- Inner -->
+        <div class="inner">
+    <hr />
 
+    <a href="#main"><i class="fa fa-angle-double-down" style="font-size:58px;"></i></a>
+      </div>
+  </div>
       <!-- Main -->
       
         <div class="wrapper style1">
@@ -135,10 +145,19 @@ table tbody th {
 	{% endif %}
 	<br>
 
-
+<div class="tab">
+<ul class="tabs">
+		<li><a href="#">{% trans "Casos por año" %}</a></li>
+		<li><a href="#">{% trans "Casos por ubicación" %}</a></li>
+		<li><a href="#">{% trans "Edad" %}</a></li>
+		<li><a href="#">{% trans "Género" %}</a></li>
+		<li><a href="#">{% trans "Profesión" %}</a></li>
+	</ul>
+	<div class="tab_content">
+		<div class="tabs_item">
 			{% if graph %}
 <div id="graphDiv" style="width:100%;height:100%">
-<br>
+<p>TEST</p>
 {{graph|safe }}
 <script>
 var selectorOptions = {
@@ -186,13 +205,13 @@ window.onresize = function() {
   })
 };
 </script>
+</div>
 {% endif %}
 		</div>
-
+		<div class="tabs_item">
 			{% if geo %}
-<br>
-<div id="graphDivgeo" style="width: 0.9 * window.innerWidth; height: 0.9 * window.innerHeight" >
-<script>
+<div id="graphDivgeo">
+<p> ADD DESCRIPTION FOR GEO HERE</p> <!-- maybe increase font size -->
 var data_geo = [{
         type: 'scattermapbox',
         mode: 'markers',
@@ -218,13 +237,12 @@ var data_geo = [{
             shoticksuffix: 'last',
             ticksuffix: 'inches',
             dtick: 0.1*/
-	    title:"{% trans 'Número de personas' %}"
+	    title:"Number of People"
           }
         },
-        name: '{% trans "Número de personas" %}'
+        name: 'Number of People'
     }];
 var layout_geo = {
-	  title: "{% trans 'Lugar de desaparición' %}",
       dragmode: 'zoom',
       mapbox: {
         center: {
@@ -251,18 +269,17 @@ Plotly.setPlotConfig({
     Plotly.newPlot('graphDivgeo', data_geo, layout_geo);
 window.onresize = function() {
   Plotly.relayout('graphDivgeo', {
-    width:  window.innerWidth,
-    height: window.innerHeight
+    width: 0.9 * window.innerWidth,
+    height: 0.9 * window.innerHeight
   })
 };
 </script>
-
+</div>
 {% endif %}
-
-
+		</div>
+	<div class="tabs_item">
 		{% if age %}
-<br>
-<div id="graphDivage" style="width:1150px; height:600px;">
+<div id="graphDivage">
 <!--{{ age|safe }}-->
 
 <script>
@@ -276,8 +293,8 @@ var trace = {
 
 var data = [trace];
 var layout = {
- title: "{% trans 'Edad cuando desapareció' %}",
- xaxis: {title: "{% trans 'Edad' %}", }, yaxis: {"title": "{% trans 'Número de personas desaparecidas' %}"}};
+ title: "Age vs Missing Numbers",
+ xaxis: {title: "Age", }, yaxis: {"title": "Number of Missing People"}};
 
 Plotly.newPlot('graphDivage', data, layout);
 window.onresize = function() {
@@ -287,16 +304,17 @@ window.onresize = function() {
   })
 };
 </script> 
+</div>
 {% endif %}
 	</div>
 
+	<div class="tabs_item">
 	{% if gender %}
-<br>
 <div id="graphDivgender">
 <!--{{ gender|safe }}-->
 <script>
-var layout = {title: '{% trans "Género de los desaparecidos" %}',
-               showlegend: true, width: 1150, height: 600};
+var layout = {title: 'Gender vs Missing People',
+               showlegend: true, width: 800, height: 600};
 Plotly.newPlot('graphDivgender', {{gender_data | safe}}, layout);
 window.onresize = function() {
   Plotly.relayout('graphDivgender', {
@@ -309,12 +327,13 @@ window.onresize = function() {
 
 </div>
 {% endif %}
+	</div>
 
 	<div class="tabs_item">
 	{% if pro %}
-<br>
-<div id="graphDivpro">
+<div id="graphDivpro" style="width:800px;height:600px">
 <!--{{ pro |safe }}-->
+
 <script>
 var trace = {
 	x: {{ se|safe }},
@@ -324,14 +343,9 @@ var trace = {
 }
 
 var data = [trace];
-
-var layout = {title: '{% trans "Profesión de personas desaparecidas" %}', width: 1150, height: 500,
-	xaxis: {
-    showticklabels: true,
-    tickangle: 45 }
-};
-
-Plotly.newPlot('graphDivpro', data, layout);
+var layout = {title: 'Gender vs Missing People',
+               showlegend: true, width: 800, height: 600};
+Plotly.newPlot('graphDivpro', data, {{layout_pro | safe}});
 window.onresize = function() {
   Plotly.relayout('graphDivpro', {
     width: 0.9 * window.innerWidth,
@@ -383,35 +397,106 @@ window.onresize = function() {
 </div>
 {% endif %}
 	</div>
+	</div>
 </div>
-<br>
-<br>
-<br>
+
 <table class="table table-condensed">
-    <caption>{% trans 'Detalles de los casos' %}</caption>
+    <caption>Details of the Cases</caption>
     <tbody>
 <tr>
-                <td class="text-right"><span class="text-right bold-martinique">{% trans 'Descripción física' %}:</span></th>
+                <td class="text-right"><span class="text-right bold-martinique">Physical Description:</span></th>
                 <td class="text-left"><span class="text-left">
-                    {{ files }} {% trans 'casos totales' %}</span>
+                    {{ files }} Total Files </span>
                 </td>
             </tr>
 
 <tr>
-                <td class="text-right"><span class="text-right bold-martinique">{% trans 'Contar' %}:</span></th>
+                <td class="text-right"><span class="text-right bold-martinique">Count:</span></th>
                 <td class="text-left"><span class="text-left">
-                    {{ caja }} {% trans 'cajas' %}</span>
+                    {{ caja }} Legal Archives Box </span>
                 </td>
             </tr>
 
             </tbody>
 </table>
 
+<div class="tab">
+
+	<ul class="tabs">
+		{% for key, value in cases.items %}
+			<li><a href="#">Shelving {{ key }}</a></li>
+		{% endfor %}
+	</ul> <!-- / tabs -->
+
+	<div class="tab_content">
+		{% for key, value in cases.items %}
+			<div class="tabs_item">
+				<table class="table table-condensed">
+    <tbody>
+<tr>
+                <th class="text-right"><span class="text-right bold-martinique">Dates:</span></th>
+                <td class="text-left"><span class="text-left">
+                    {{ value.0 }}</span>
+                </td>
+            </tr>
+
+<tr>
+                <th class="text-right"><span class="text-right bold-martinique">Plato count:</span></th>
+                <td class="text-left"><span class="text-left">
+                    {{ value.1 }}</span>
+                </td>
+            </tr>
+
+		<th class="text-right"><span class="text-right bold-martinique">Caja count:</span></th>
+                <td class="text-left"><span class="text-left">
+                    {{ value.2 }}</span>
+                </td>
+            </tr>
+
+            </tbody>
+</table>
+			</div> <!-- / tabs_item -->
+
+		{% endfor %}
+	</div> <!-- / tab_content -->
+</div> <!-- / tab -->	
+              <h3>{% trans "Carpetas" %}</h3>
+
+
+              <section>
+                <header>
+                  <h3>{% trans "Ultrices tempor sagittis nisl"%}</h3>
+                </header>
+                <p>
+                  {% trans "Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
+                  at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
+                  feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
+                  fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
+                  egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna."%}
+                </p>
+                <p>
+                  {% trans "Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
+                  orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
+                  ut penatibus fermentum nibh erat malesuada varius."%}
+                </p>
+              </section>
+              <section>
+                <header>
+                  <h3>{% trans "Augue euismod feugiat tempus"%}</h3>
+                </header>
+                <p>
+                  {% trans "Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
+                  feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
+                  ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
+                  egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna."%}
+                </p>
+              </section>
+            </article>
+            <hr />
 
           </div>
 
         </div>
-
 <script>
 $(document).ready(function() { 
 

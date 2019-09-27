@@ -11,7 +11,7 @@
   <!-- Inner -->
 <div class="inner">
     <h1><a href="{% url 'index' %}" id="logo">Gam</a></h1>
-    <hr />
+    
     <p>{% trans "Una historia de desapariciones en Guatemala" %}</p>
     <a href="#main" class="button circled scrolly">{% trans "comienzo" %}</a>
 
@@ -34,8 +34,7 @@
   <!-- Inner -->
         <div class="inner">
 
-    <hr />
-    <h4>{% trans "Casos del diario militar en los archivos del GAM" %}</h4>
+    
 
     <a href="#main"><i class="fa fa-angle-double-down" style="font-size:58px;"></i></a>
       </div>
@@ -43,14 +42,11 @@
 <!-- History section -->
       <div class="container">
       <div class="row" style="margin-top:auto;">
-   <div class="col-md-8" style="margin-top: 10%;">
+   <div class="col-md-8" style="margin-top: 8%%; width: 100%;">
     <div id="main" class="container special">
-      <h2><a href="#">{% trans "Historia" %} </a></h2>
-      <p>
-      {% trans "Sobre la historia  summary aenean eu aenean mollis mollis facilisis primis ornare penatibus aenean. Cursus ac enim pulvinar curabitur morbi convallis. Lectus malesuada sed fermentum dolore amet." %}
-    </p>
-
-    <a href="{% url 'acceso:history' %}" class="button">{% trans "Sigue Leyendo Sobre la Historia" %}</a>
+      <h2 style="text-align: center;">{% trans "¿Qué es el Archivo Histórico del GAM?" %}</h2>
+     <p>{% trans "Es un esfuerzo de rescate de miles de documentos, los cuales contienen los testimonios de las víctimas de violaciones de derechos humanos durante el Conflicto Armado Interno en Guatemala. Este archivo busca dar acceso  virtual a una colección de documentos que narran los hechos vividos por las víctimas durante ese periodo. Nuestro objetivo es permitir que las historias de los hechos sucedidos, sean conocidas desde los testimonios de los familiares y contribuyan a la dignificación de la memoria de sus seres queridos. " %} 
+     </p>
 
 
     </footer>
@@ -157,9 +153,12 @@ figure {
 
 
 <div class="container">
-   <h2><a href="#">{% trans "Personas" %} </a></h2>
-  <div class="row">
-    <div class="col-4@sm col-3@md">
+   <br>
+  <p>{% trans "Si usted búsca un caso particular, debe de ingresar el nombre de la persona, y en caso de encontrarlo en  nuestros registros digitales, puede ponerse en contacto con nosotros para mayor informacion sobre el caso." %}
+  </p>
+  <br>
+  <div class="row" style="left:25%;">
+    <div class="col-4@sm col-3@md" style="margin:auto;">
       <div class="filters-group">
         <label for="filters-search-input" class="filter-label">{% trans 'Buscar' %}</label>
         <input class="textfield filter__search js-shuffle-search" type="search" id="filters-search-input" />
@@ -171,7 +170,7 @@ figure {
     </div>
 
 
-    <div class="col-12@sm filters-group-wrap">
+    <div class="col-12@sm filters-group-wrap" style="margin:auto; position:relative; bottom:25px; right:35px;">
       <div class="filters-group">
         <div class="btn-group filter-options">
           {% for filter in filter_list %}
@@ -186,15 +185,15 @@ figure {
 </div>
 
 <div class="container">
-  <div id="grid" class="row my-shuffle-container">
+  <div id="grid" class="row my-shuffle-container" style="width:100%;">
    {% for caso in casos %}
-     <figure class="picture-item" data-groups="{{ caso|filters }}" data-fecha-de-desaparicion="{{ caso.fecha_de_desaparicion|date:"Y-m-d" }}" data-title="{{ caso.nombre_del_caso}}">
+     <figure class="picture-item" style="width:100%;" data-groups="{{ caso|filters }}" data-fecha-de-desaparicion="{{ caso.fecha_de_desaparicion|date:"Y-m-d" }}" data-title="{{ caso.nombre_del_caso}}">
       <a  href="{% url 'acceso:caso' caso.slug_name %}"><b>{{ caso.nombre_del_caso }}</b></a>
-      <div class="picture-item__inner">
+      <div class="picture-item__inner" style="padding-right:35px; width:100%;">
         <div class="aspect aspect--16x9"> <!-- 16x9 -->
           <div class="aspect__inner" style="border: black; border-width: 5px; border-style: solid;">
            {% if caso.foto_de_perfil %}
-            <a  href="{% url 'acceso:caso' caso.slug_name %}"><img src="https://archivogam.haverford.edu/{{ caso.foto_de_perfil }}"  #TODO This is a temporary fix, needs to have dynamic path
+            <a  href="{% url 'acceso:caso' caso.slug_name %}"><img style="width:100%;" src="https://archivogam.haverford.edu/{{ caso.foto_de_perfil }}"  #TODO This is a temporary fix, needs to have dynamic path
                                                                   alt="{{ caso.descripción|safe}}" /></a>
             {% else %}
             <a  href="{% url 'acceso:caso' caso.slug_name %}"><img src="https://archivogam.haverford.edu/static/pat_goudvis/{{ photo }}"  #TODO This is a temporary fix, needs to have dynamic path

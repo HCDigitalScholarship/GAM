@@ -22,7 +22,11 @@ uwsgi_params
 /archivo/settings_secret.py
 /acceso/static/acceso/images/
 /acceso/static/acceso/js/seadragon/images
+/acceso/migrations/
 /media
 /acceso/static/pat_goudvis/
+/acceso/static/imagens/
+/acceso/static/miniatura/
+/acceso/static/diario_militar/
 *.mo
 /acceso/bokeh/

@@ -81,18 +81,18 @@ def import_image_file(filename, nombre_de_la_bolsa):
         print('[*] %s' % new_filename)
         dzi_me = pyvips.Image.new_from_file(new_path + new_filename)
 
-        if not os.path.isdir('/mnt/dzis1/'):
-            os.mkdir('/mnt/dzis1/')
-        dzi_me.dzsave('/mnt/dzis1/{}'.format(new_filename))
+        if not os.path.isdir('/mnt/dzis1/{}/'.format(nombre_de_la_bolsa)):
+            os.mkdir('/mnt/dzis1/{}/'.format(nombre_de_la_bolsa))
+        dzi_me.dzsave('/mnt/dzis1/{}/{}'.format(nombre_de_la_bolsa, new_filename))
 
         #  Here we re-add the jpg to the filename, this is not really a good thing, but too late to change it
         os.rename(
-            '/mnt/dzis1/{}'.format(new_filename.replace('.jpg', '.dzi')),
-            '/mnt/dzis1/{}'.format(new_filename + '.dzi'),
+            '/mnt/dzis1/{}/{}'.format(nombre_de_la_bolsa, new_filename.replace('.jpg', '.dzi')),
+            '/mnt/dzis1/{}/{}'.format(nombre_de_la_bolsa, new_filename + '.dzi'),
         )
         os.rename(
-            '/mnt/dzis1/{}'.format(new_filename.replace('.jpg', '_files')),
-            '/mnt/dzis1/{}'.format(new_filename + '_files'),
+            '/mnt/dzis1/{}/{}'.format(nombre_de_la_bolsa, new_filename.replace('.jpg', '_files')),
+            '/mnt/dzis1/{}/{}'.format(nombre_de_la_bolsa, new_filename + '_files'),
         )
 
     except Exception as e:
@@ -319,6 +319,8 @@ class Command(BaseCommand):
             [import_resumen_file(file) for file in txt_files]
 
             shutil.rmtree('/mnt/bags/{}'.format(nombre_de_la_bolsa))
-
+            os.system('s4cmd -r --verbose --config=/home/ajanco/.s3cfg --API-ACL=public-read --num-threads=6 --retry=10 --endpoint-url https://nyc3.digitaloceanspaces.com sync /mnt/dzis1/{}/  s3://dzis'.format(nombre_de_la_bolsa))
+            print('se transferió a todas las imágenes al almacenamiento de objetos')
+            #shutil.rmtree('/mnt/dzis1/{}'.format(nombre_de_la_bolsa))
         else:
             print('la bolsa no es valida')

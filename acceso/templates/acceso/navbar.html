@@ -22,22 +22,18 @@
 }
 
 </style>
+
 <div class="logo">
-    <a href="/acceso"><img class="logo" style="height: 80px; width: 180px; margin-left: 80px;" src="{% static 'Logo-GAM-header.png.1' %}"  alt="GAM logo"/></a>
+    <a href="/acceso"><img class="logo" style="height: 80px; width: 180px; margin-left: 80px;" src="{% static 'archivo_gam.png' %}"  alt="GAM logo"/></a>
+
 </div>
-<nav id="nav">
+    <nav id="nav">
   <ul>
 
     <li>
           <a class="nav-text" href="{% url 'acceso:index' %}">{% trans "Inicio" %}</a>
         </li>
-          <li>
-          <a class="nav-text" href="{% url 'acceso:about' %}">{% trans "Sobre el proyecto" %}</a>
-        </li>
 
-    <li>
-          <a class="nav-text" href="{% url 'acceso:history' %}">{% trans "contexto histórico" %}</a>
-        </li>
     <li>
           <a class="nav-text" href="{% url 'acceso:collection' %} ">{% trans "la colección" %}</a>
         </li>
@@ -64,6 +60,7 @@
                   </a>
                 </li>
       {% endfor %}
+          
           </ul>
 
     </li>

@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "manage.py", line 18, in <module>
+    main()
+  File "manage.py", line 15, in main
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python-virtualenv/gam_env/lib/python3.5/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python-virtualenv/gam_env/lib/python3.5/site-packages/django/core/management/__init__.py", line 375, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/usr/local/lib/python-virtualenv/gam_env/lib/python3.5/site-packages/django/core/management/base.py", line 316, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/usr/local/lib/python-virtualenv/gam_env/lib/python3.5/site-packages/django/core/management/base.py", line 353, in execute
+    output = self.handle(*args, **options)
+  File "/srv/GAM/gam_app/management/commands/importar_una_bolsa.py", line 263, in handle
+    bolsas_importadas = set(getImportedBags())
+  File "/srv/GAM/gam_app/tracking.py", line 115, in getImportedBags
+    for imagen in Imagen.objects.all():
+  File "/usr/local/lib/python-virtualenv/gam_env/lib/python3.5/site-packages/django/db/models/query.py", line 268, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python-virtualenv/gam_env/lib/python3.5/site-packages/django/db/models/query.py", line 1186, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python-virtualenv/gam_env/lib/python3.5/site-packages/django/db/models/query.py", line 63, in __iter__
+    for row in compiler.results_iter(results):
+  File "/usr/local/lib/python-virtualenv/gam_env/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1006, in apply_converters
+    for pos, (convs, expression) in converters:
+KeyboardInterrupt
