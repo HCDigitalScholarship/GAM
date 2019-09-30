@@ -160,7 +160,7 @@
   </li>
 </ul>
 
-<div class="tab-content">
+<div class="tab-content" style="overflow:auto;">
 <div id="tab1-slug" class="tab-pane fade in active">
 <!-- result table -->
 <div class="row">
@@ -290,12 +290,18 @@ $(document).ready( function () {
 
 <div class="col" style="background-color:#aaa; width:100%; height:80%;">
 <span>
-   <img src={% static 'openseadragon-flat-toolbar-icons/images/zoomin_rest.png' %}   id='zoom-in' class='sea-icon'>
-   <img src={% static 'openseadragon-flat-toolbar-icons/images/zoomout_rest.png' %}  id='zoom-out' class='sea-icon'>
-   <img src={% static 'openseadragon-flat-toolbar-icons/images/home_rest.png' %}     id='home'  class='sea-icon'>
-   <img src={% static 'openseadragon-flat-toolbar-icons/images/fullpage_rest.png' %} id='full-page' class='sea-icon'  >
-   <img src={% static 'openseadragon-flat-toolbar-icons/images/rotateleft_rest.png' %} id='left-rotate' class='sea-icon'>
-   <img src={% static 'openseadragon-flat-toolbar-icons/images/rotateright_rest.png' %}     id='right-rotate' class='sea-icon'>
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/zoomin_rest.png' %} id='zoom-in' class='sea-icon' style="cursor:pointer;">
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/zoomout_rest.png' %} id='zoom-out' class='sea-icon' style="cursor:pointer;">
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/home_rest.png' %} id='home'  class='sea-icon' style="cursor:pointer;">
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/fullpage_rest.png' %} id='full-page' class='sea-icon' style="cursor:pointer;"  >
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/rotateleft_rest.png' %} id='left-rotate' class='sea-icon' style="cursor:pointer;">
+   <img src={% static 'openseadragon-flat-toolbar-icons/images/rotateright_rest.png' %} id='right-rotate' class='sea-icon' style="cursor:pointer;">
+    <select id="limiter" style='sea-icon'>
+		<option value="1000">All</option>
+		<option value="10">10</option>
+		<option value="20">20</option>
+		<option value="50">50</option>
+	</select> 
 </span>
 <div id="openseadragon1" style="width:100%; height:100%;" ></div>
 <script src="{% static 'js/openseadragon-viewerinputhook.min.js' %}"></script>
@@ -327,6 +333,37 @@ ITEMS.push([
 SRCS.push("https://dzis.nyc3.digitaloceanspaces.com/{{ object.nombre_del_archivo }}.dzi")
 {% endif %}
 {% endfor %}
+
+var s = document.getElementById("limiter");
+var ITEMS_copy = JSON.parse(JSON.stringify(ITEMS));
+var SRCS_copy = JSON.parse(JSON.stringify(SRCS));
+
+s.addEventListener("change", function() {
+	opt = parseInt(getSelectedOption(s).value);
+
+	if (opt == 1000) {
+		opt = ITEMS_copy.length;
+	}
+
+	ITEMS = ITEMS_copy.slice(0, opt);
+	SRCS = SRCS_copy.slice(0, opt);
+	//viewer.world.resetItems();
+	console.log(ITEMS.length);
+	console.log(SRCS.length);
+	viewer.close();
+	viewer.open(SRCS);
+});
+
+function getSelectedOption(s) {
+	var opt;
+	for (var i=0, len=s.options.length; i<len; i++) {
+		opt = s.options[i];
+		if (opt.selected === true) {
+			break;
+		}
+	}
+	return opt;
+}
 
 </script>
 <script src="{% static 'gam_app/js/procesamiento.js' %}"></script>
