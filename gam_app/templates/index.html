@@ -36,7 +36,7 @@
 	$("#searcher_counter").val("1");
 	});
       // These long lines are just html we will be using and reusing
-      var select_fields = "<select class='form-control field_option'> <option>{% trans "Cualquier Campo" %}</option> <option>{% trans "Persona" %}</option> <option>{% trans "Ubicación Geográfica" %}</option> <option>{% trans "Género" %}</option> <option>{% trans "Etnicidad" %}</option></select>";
+      var select_fields = "<select class='form-control field_option'> <option value='Cualquier Campo'>{% trans "Cualquier Campo" %}</option> <option value='Persona'>{% trans "Persona" %}</option> <option value='Ubicación Geográfica'>{% trans "Ubicación Geográfica" %}</option> <option value='Género'>{% trans "Género" %}</option> <option value='Etnicidad'>{% trans "Etnicidad" %}</option></select>";
        var delete_button = "<button class='delete_searcher' type='button'><span class='glyphicon glyphicon-remove delete_searcher'></span></button>"; 
       
       function createLogicDropdown(operator) {
