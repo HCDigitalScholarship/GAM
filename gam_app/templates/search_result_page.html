@@ -134,25 +134,6 @@ $("#searcher1").append("<span><div class='input-group stylish-input-group'><inpu
        var text  = $(this).children().children().children(".search_text").val();
        var logic = $(this).children().children(".logic_option").val();
        var field = $(this).children().children(".field_option").val();
-	   // Might break because field is different for en and es
-	   // still not working, need to switch to spanish and back to english for it to work
-	   switch(field) {
-	       case "Any Field":
-		       field = "Cualquier Campo";
-			   break;
-		   case "People":
-			   field = "Persona";
-			   break;
-		   case "Geographic Location":
-			   field = "Ubicación Geográfica";
-			   break;
-		   case "Gender":
-			   field = "Género";
-			   break;
-		   case "Ethnicity":
-			   field = "Etnicidad";
-			   break;
-	   }
        the_request += text + "-" + logic + "-" + field + "-";
     });        
     $("#full_info").val(the_request);
