@@ -27,11 +27,11 @@
 
 {% if previous %}
   <div class="col-sm-2">
-    <a href="{% url 'documento5' state.archivo state.colección state.caja state.legajo state.carpeta previous %}"> {% trans "< Anterior :" %}</a>
+    <a href="{% url 'documento5' state.archivo state.colección state.caja state.legajo state.carpeta previous %}"> < {% trans "Anterior" %} :</a>
 {% endif %}
 
 {% if next_one %}
-  <a href="{% url 'documento5' state.archivo state.colección state.caja state.legajo state.carpeta next_one %}">{% trans "Siguiente >" %}</a>
+	<a href="{% url 'documento5' state.archivo state.colección state.caja state.legajo state.carpeta next_one %}">{% trans "Siguiente" %} ></a>
 {% endif %}
 </div>
       <input type="hidden" value="clipboard" name="input" />

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-05 01:20+0000\n"
+"POT-Creation-Date: 2019-10-21 19:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,7 @@ msgstr "You do not have permission to edit anything."
 #: gam_app/templates/all_documents_page.html:37
 #: gam_app/templates/all_documents_page.html:46
 #: gam_app/templates/all_documents_page.html:56
+#: gam_app/templates/document_page.html:30
 #: gam_app/templates/grandes_colecciones.html:29
 #: gam_app/templates/grandes_colecciones.html:38
 #: gam_app/templates/grandes_colecciones.html:48
@@ -50,6 +51,7 @@ msgstr "Previous"
 #: gam_app/templates/all_documents_page.html:41
 #: gam_app/templates/all_documents_page.html:50
 #: gam_app/templates/all_documents_page.html:60
+#: gam_app/templates/document_page.html:34
 #: gam_app/templates/grandes_colecciones.html:33
 #: gam_app/templates/grandes_colecciones.html:42
 #: gam_app/templates/grandes_colecciones.html:52
@@ -102,7 +104,7 @@ msgstr "Image Filename"
 #: gam_app/templates/grandes_colecciones.html:195
 #: gam_app/templates/personal_explorar.html:81
 #: gam_app/templates/publico_explorar.html:79
-#: gam_app/templates/search_result_page.html:337
+#: gam_app/templates/search_result_page.html:395
 msgid "Inicia sesión para ver este contenido"
 msgstr "Login to view this content"
 
@@ -198,18 +200,6 @@ msgstr "Clipboard"
 msgid "de"
 msgstr "of"
 
-#: gam_app/templates/document_page.html:30
-#, fuzzy
-#| msgid "Anterior"
-msgid "< Anterior :"
-msgstr "Previous"
-
-#: gam_app/templates/document_page.html:34
-#, fuzzy
-#| msgid "Siguiente"
-msgid "Siguiente >"
-msgstr "Following"
-
 #: gam_app/templates/document_page.html:75
 #: gam_app/templates/document_page.html:92
 msgid "Guardar cambios"
@@ -225,8 +215,6 @@ msgid "Notas"
 msgstr "Notes"
 
 #: gam_app/templates/document_page.html:94
-#, fuzzy
-#| msgid "Carpeta no"
 msgid "Carpeta titulo"
 msgstr "Folder no."
 
@@ -248,8 +236,6 @@ msgstr "Description"
 #: gam_app/templates/explorar.html:28
 #: gam_app/templates/personal_explorar.html:26
 #: gam_app/templates/publico_explorar.html:26
-#, fuzzy
-#| msgid "Archivo"
 msgid "Archivos"
 msgstr "Archive"
 
@@ -257,8 +243,6 @@ msgstr "Archive"
 #: gam_app/templates/grandes_colecciones.html:81
 #: gam_app/templates/personal_explorar.html:45
 #: gam_app/templates/publico_explorar.html:45
-#, fuzzy
-#| msgid "Colección"
 msgid "Colecciónes"
 msgstr "Collection"
 
@@ -266,8 +250,6 @@ msgstr "Collection"
 #: gam_app/templates/grandes_colecciones.html:148
 #: gam_app/templates/personal_explorar.html:61
 #: gam_app/templates/publico_explorar.html:61
-#, fuzzy
-#| msgid "Carpeta"
 msgid "Carpetas"
 msgstr "Folder"
 
@@ -291,79 +273,81 @@ msgstr "CONTACT US"
 msgid "  8a calle 3-11 Zona 1"
 msgstr "8th Street 3-11 Zone 1"
 
+#: gam_app/templates/footer.html:52
+msgid "SÍGUENOS"
+msgstr ""
+
 #: gam_app/templates/grandes_colecciones.html:100
-#, fuzzy
-#| msgid "Caja"
 msgid "Cajas"
 msgstr "Box"
 
 #: gam_app/templates/grandes_colecciones.html:128
-#, fuzzy
-#| msgid "Legajo"
 msgid "Legajos"
 msgstr "Bundle"
 
 #: gam_app/templates/grandes_colecciones.html:174
-#, fuzzy
-#| msgid "Item"
 msgid "Items"
 msgstr "Item"
 
-#: gam_app/templates/index.html:24 gam_app/templates/search_result_page.html:46
+#: gam_app/templates/index.html:24 gam_app/templates/search_result_page.html:45
 msgid "Agregar un término de búsqueda"
 msgstr "Add a search term"
 
 #: gam_app/templates/index.html:26 gam_app/templates/index.html:50
-#: gam_app/templates/search_result_page.html:48
+#: gam_app/templates/search_result_page.html:47
+#: gam_app/templates/search_result_page.html:67
+#: gam_app/templates/search_result_page.html:70
 #: gam_app/templates/search_result_page.html:73
 msgid "O"
 msgstr "OR"
 
 #: gam_app/templates/index.html:27 gam_app/templates/index.html:44
-#: gam_app/templates/index.html:47 gam_app/templates/search_result_page.html:49
+#: gam_app/templates/index.html:47 gam_app/templates/search_result_page.html:48
 #: gam_app/templates/search_result_page.html:67
 #: gam_app/templates/search_result_page.html:70
+#: gam_app/templates/search_result_page.html:73
 msgid "Y"
-msgstr "Y"
+msgstr "AND"
 
 #: gam_app/templates/index.html:28 gam_app/templates/index.html:44
 #: gam_app/templates/index.html:47 gam_app/templates/index.html:50
-#: gam_app/templates/search_result_page.html:50
+#: gam_app/templates/search_result_page.html:49
 #: gam_app/templates/search_result_page.html:67
 #: gam_app/templates/search_result_page.html:70
 #: gam_app/templates/search_result_page.html:73
 msgid "NO"
 msgstr "DO NOT"
 
-#: gam_app/templates/index.html:39 gam_app/templates/search_result_page.html:61
+#: gam_app/templates/index.html:39 gam_app/templates/search_result_page.html:60
+#: gam_app/templates/search_result_page.html:61
 msgid "Cualquier Campo"
 msgstr "Any Field"
 
 #: gam_app/templates/index.html:39 gam_app/templates/procesamiento.html:94
+#: gam_app/templates/search_result_page.html:60
 #: gam_app/templates/search_result_page.html:61
-#: gam_app/templates/search_result_page.html:265
-#, fuzzy
-#| msgid "Persona(s)"
+#: gam_app/templates/search_result_page.html:285
 msgid "Persona"
-msgstr "Person(s)"
+msgstr "People"
 
-#: gam_app/templates/index.html:39 gam_app/templates/search_result_page.html:61
-#, fuzzy
-#| msgid "Ubicación geográfica"
+#: gam_app/templates/index.html:39 gam_app/templates/search_result_page.html:60
+#: gam_app/templates/search_result_page.html:61
 msgid "Ubicación Geográfica"
 msgstr "Geographic location"
 
-#: gam_app/templates/index.html:39 gam_app/templates/search_result_page.html:61
+#: gam_app/templates/index.html:39 gam_app/templates/search_result_page.html:60
+#: gam_app/templates/search_result_page.html:61
 msgid "Género"
 msgstr "Gender"
 
-#: gam_app/templates/index.html:39 gam_app/templates/search_result_page.html:61
+#: gam_app/templates/index.html:39 gam_app/templates/search_result_page.html:60
+#: gam_app/templates/search_result_page.html:61
 msgid "Etnicidad"
 msgstr "Ethnicity"
 
-#: gam_app/templates/index.html:54 gam_app/templates/search_result_page.html:78
-#, fuzzy
-#| msgid "Buscar"
+#: gam_app/templates/index.html:54 gam_app/templates/search_result_page.html:87
+#: gam_app/templates/search_result_page.html:98
+#: gam_app/templates/search_result_page.html:109
 msgid "Buscar..."
 msgstr "Search"
 
@@ -433,16 +417,12 @@ msgid "Procesamiento secundario"
 msgstr "Secondary processing"
 
 #: gam_app/templates/mission_control.html:43
-#, fuzzy
-#| msgid "Traducción"
 msgid "sin traducción"
-msgstr "Translation"
+msgstr "Without Translation"
 
 #: gam_app/templates/mission_control.html:45
-#, fuzzy
-#| msgid "Traducción"
 msgid "traducido"
-msgstr "Translation"
+msgstr "Translated"
 
 #: gam_app/templates/mission_control.html:60
 #: gam_app/templates/mission_control2.html:47
@@ -471,6 +451,7 @@ msgid "Acceso"
 msgstr ""
 
 #: gam_app/templates/navbar.html:87
+#: gam_app/templates/search_result_page.html:78
 msgid "Buscar"
 msgstr "Search"
 
@@ -501,7 +482,7 @@ msgid "Artículos en la carpeta"
 msgstr "Folder title"
 
 #: gam_app/templates/procesamiento.html:97
-#: gam_app/templates/search_result_page.html:268
+#: gam_app/templates/search_result_page.html:288
 msgid "Lugar"
 msgstr "Place"
 
@@ -554,82 +535,77 @@ msgstr ", you have an account activation on"
 msgid "You are now registered. Activation email sent."
 msgstr "You are now registered. Activation email sent."
 
-#: gam_app/templates/search_result_page.html:156
+#: gam_app/templates/search_result_page.html:78
+msgid "en"
+msgstr "in"
+
+#: gam_app/templates/search_result_page.html:175
 msgid "All"
 msgstr "All"
 
-#: gam_app/templates/search_result_page.html:159
-#: gam_app/templates/search_result_page.html:192
+#: gam_app/templates/search_result_page.html:178
+#: gam_app/templates/search_result_page.html:212
 msgid "Image"
 msgstr "Image"
 
-#: gam_app/templates/search_result_page.html:170
+#: gam_app/templates/search_result_page.html:190
 msgid "Result"
 msgstr "Result"
 
-#: gam_app/templates/search_result_page.html:180
-#: gam_app/templates/search_result_page.html:241
+#: gam_app/templates/search_result_page.html:200
+#: gam_app/templates/search_result_page.html:261
 msgid "género"
 msgstr "gender"
 
-#: gam_app/templates/search_result_page.html:181
-#: gam_app/templates/search_result_page.html:242
+#: gam_app/templates/search_result_page.html:201
+#: gam_app/templates/search_result_page.html:262
 msgid "etnicidad"
 msgstr "ethnicity"
 
-#: gam_app/templates/search_result_page.html:182
-#, fuzzy
-#| msgid "Fecha desaparición"
+#: gam_app/templates/search_result_page.html:202
+#: gam_app/templates/search_result_page.html:268
 msgid "fecha desaparición"
 msgstr "Date of dissapearance"
 
-#: gam_app/templates/search_result_page.html:193
-#, fuzzy
-#| msgid "Archivo"
+#: gam_app/templates/search_result_page.html:213
 msgid "archivo"
 msgstr "Archive"
 
-#: gam_app/templates/search_result_page.html:194
-#, fuzzy
-#| msgid "Colección"
+#: gam_app/templates/search_result_page.html:214
 msgid "colección"
 msgstr "Collection"
 
-#: gam_app/templates/search_result_page.html:195
+#: gam_app/templates/search_result_page.html:215
 msgid "caja"
 msgstr "box"
 
-#: gam_app/templates/search_result_page.html:196
+#: gam_app/templates/search_result_page.html:216
 msgid "item"
 msgstr "item"
 
-#: gam_app/templates/search_result_page.html:243
+#: gam_app/templates/search_result_page.html:263
 msgid "fecha de nacimiento"
 msgstr "birthdate"
 
-#: gam_app/templates/search_result_page.html:244
+#: gam_app/templates/search_result_page.html:264
 msgid "profesión"
 msgstr "profession"
 
-#: gam_app/templates/search_result_page.html:245
+#: gam_app/templates/search_result_page.html:265
 msgid "actividades políticas"
 msgstr "political activities"
 
-#: gam_app/templates/search_result_page.html:248
-#, fuzzy
-#| msgid "Fecha desaparicion"
-msgid "fecha desaparicion"
-msgstr "Date of dissapearance"
-
-#: gam_app/templates/search_result_page.html:249
-#, fuzzy
-#| msgid "Edad en ese momento"
+#: gam_app/templates/search_result_page.html:269
 msgid "edad en el momento"
 msgstr "Age at the time"
 
-#: gam_app/templates/search_result_page.html:271
+#: gam_app/templates/search_result_page.html:291
 msgid "Imagen"
 msgstr "Image"
+
+#: gam_app/templates/search_result_page.html:319
+msgid "Mostrar Todos"
+msgstr "Show All"
 
 #: gam_app/templates/single_caso_page.html:11
 msgid "Fecha desaparicion"
@@ -676,10 +652,8 @@ msgid "Traducción"
 msgstr "Translation"
 
 #: gam_app/templates/track_bags.html:23
-#, fuzzy
-#| msgid "Número de páginas"
 msgid "número de bolso"
-msgstr "Number of pages"
+msgstr "Bag Number"
 
 #: gam_app/templates/track_bags.html:24
 msgid "status"
@@ -692,6 +666,9 @@ msgstr "imported"
 #: gam_app/templates/track_bags.html:34
 msgid "no importado"
 msgstr "not imported"
+
+#~ msgid "fecha desaparicion"
+#~ msgstr "Date of dissapearance"
 
 #~ msgid "Haga clic aquí para crear una cuenta e iniciar sesión."
 #~ msgstr "Click here to create an account and login."

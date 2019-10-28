@@ -32,7 +32,6 @@
     background-color: black;
 }
 </style>
-
 <!-- search form -->
 <!-- build a form --> 
 <form id="searchers_form"  action="" method="GET" style="padding-top: 10px;">
@@ -58,24 +57,25 @@
   });
 
   // These long lines are just html we will be using and reusing
-  var select_fields = "<select class='form-control field_option'> <option>{% trans "Cualquier Campo" %}</option> <option>{% trans "Persona" %}</option> <option>{% trans "Ubicación Geográfica" %}</option> <option>{% trans "Género" %}</option> <option>{% trans "Etnicidad" %}</option></select>";
+  //var select_fields = "<select class='form-control field_option'> <option value='Cualquier Campo'>{% trans "Cualquier Campo" %}</option> <option value='Persona'>{% trans "Persona" %}</option> <option value='Ubicación Geográfica'>{% trans "Ubicación Geográfica" %}</option> <option value='Género'>{% trans "Género" %}</option> <option value="Etnicidad">{% trans "Etnicidad" %}</option></select>";
+	var select_fields = "<select class='form-control field_option'> <option value='Cualquier Campo'>{% trans "Cualquier Campo" %}</option> <option value='Persona'>{% trans "Persona" %}</option> <option value='Ubicación Geográfica'>{% trans "Ubicación Geográfica" %}</option> <option value='Género'>{% trans "Género" %}</option> <option value='Etnicidad'>{% trans "Etnicidad" %}</option></select>";
   var delete_button = "<button class='delete_searcher' type='button'><span class='glyphicon glyphicon-remove delete_searcher'></span></button>"; 
       
   // let users switch to which operators they picked  
   function createLogicDropdown(operator) {
     if(operator=="AND") {
-      return  "<select class='form-control logic_option'> <option value='OR'>O</option> <option value='AND' selected='selected'>{% trans "Y" %}</option> <option value='NOT'>{% trans "NO" %}</option></select>";
+			return  "<select class='form-control logic_option'> <option value='OR'>{% trans "O" %}</option> <option value='AND' selected='selected'>{% trans "Y" %}</option> <option value='NOT'>{% trans "NO" %}</option></select>";
     }
     else if (operator=="OR") {
-      return  "<select class='form-control logic_option'> <option selected='selected' value='OR'>O</option> <option value='AND'>{% trans "Y" %}</option> <option value='NOT'>{% trans "NO" %}</option></select>";
+			return  "<select class='form-control logic_option'> <option selected='selected' value='OR'>{% trans "O" %}</option> <option value='AND'>{% trans "Y" %}</option> <option value='NOT'>{% trans "NO" %}</option></select>";
     }
     else {
-      return  "<select class='form-control logic_option'> <option value='OR'>{% trans "O" %}</option> <option value='AND'>Y</option> <option selected='selected' value='NOT'>{% trans "NO" %}</option></select>";
+			return  "<select class='form-control logic_option'> <option value='OR'>{% trans "O" %}</option> <option value='AND'>{% trans "Y" %}</option> <option selected='selected' value='NOT'>{% trans "NO" %}</option></select>";
     }
   }
     
   // make first search bar. This one can't be deleted
-  $("#searcher1").append("<span><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'><button type='submit'><span class='glyphicon glyphicon-search'></span></button></span></div> en " + select_fields + "</span>");
+$("#searcher1").append("<span><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='search' placeholder='{% trans "Buscar" %}...'><span class='input-group-addon'><button type='submit'><span class='glyphicon glyphicon-search'></span></button></span></div> {% trans "en" %} " + select_fields + "</span>");
       
   // what happens when you click AND
   $("#AND_search").click(function(event) {
@@ -84,7 +84,7 @@
       $("#searcher_counter").val(+$("#searcher_counter").val() + 1);
       var id_num = $("#searcher_counter").val();
       $("#searchers").append("<div id='searcher"+ id_num +"' class='form-group'></div>");
-      $("#searcher" + id_num).append("<span>" + createLogicDropdown("AND") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='AND_search' placeholder='Buscar...'><span class='input-group-addon'>" + delete_button + "</span></div> en " + select_fields + "</span>");
+	  $("#searcher" + id_num).append("<span>" + createLogicDropdown("AND") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='AND_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> en " + select_fields + "</span>");
     }
   });
 
@@ -95,7 +95,7 @@
       $("#searcher_counter").val(+$("#searcher_counter").val() + 1);
       var id_num = $("#searcher_counter").val();
       $("#searchers").append("<div id='searcher"+ id_num +"'></div>");
-      $("#searcher" + id_num).append("<span>" + createLogicDropdown("OR") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='OR_search' placeholder='Buscar...'><span class='input-group-addon'>" + delete_button + "</span></div> en " + select_fields + "</span>");
+      $("#searcher" + id_num).append("<span>" + createLogicDropdown("OR") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='OR_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> en " + select_fields + "</span>");
     }
   });
    
@@ -106,7 +106,7 @@
       $("#searcher_counter").val(+$("#searcher_counter").val() + 1);
       var id_num = $("#searcher_counter").val();
       $("#searchers").append("<div id='searcher"+ id_num +"'></div>");
-      $("#searcher" + id_num).append("<span>" + createLogicDropdown("NOT") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='NOT_search' placeholder='Buscar...'><span class='input-group-addon'>" + delete_button + "</span></div> en " + select_fields + "</div>");
+      $("#searcher" + id_num).append("<span>" + createLogicDropdown("NOT") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='NOT_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> en " + select_fields + "</div>");
     }
   });
   
@@ -134,7 +134,7 @@
        var text  = $(this).children().children().children(".search_text").val();
        var logic = $(this).children().children(".logic_option").val();
        var field = $(this).children().children(".field_option").val();
-       the_request += text + "-" + logic + "-" + field+"-";
+       the_request += text + "-" + logic + "-" + field + "-";
     });        
     $("#full_info").val(the_request);
     // console.log($("#full_info").val());
@@ -160,7 +160,7 @@
   </li>
 </ul>
 
-<div class="tab-content" style="overflow:auto;">
+<div class="tab-content"> 
 <div id="tab1-slug" class="tab-pane fade in active">
 <!-- result table -->
 <div class="row">
@@ -246,7 +246,7 @@ $(document).ready( function () {
             <b>{% trans "actividades políticas" %} : </b>
                 {% if persona.0.actividades_políticas.all|length == 0 %} N/A <!-- because this is a M2M field -->
                 {% else %}{{ persona.0.actividades_políticas.all }}{% endif %}<br>
-            <b>{% trans "fecha desaparicion" %} : </b> {{ persona.0.fecha_desaparicion}}<br>
+            <b>{% trans "fecha desaparición" %} : </b> {{ persona.0.fecha_desaparicion}}<br>
             <b>{% trans "edad en el momento" %} : </b> {{ persona.0.edad_en_el_momento}}
         </div>
 
@@ -296,8 +296,8 @@ $(document).ready( function () {
    <img src={% static 'openseadragon-flat-toolbar-icons/images/fullpage_rest.png' %} id='full-page' class='sea-icon' style="cursor:pointer;"  >
    <img src={% static 'openseadragon-flat-toolbar-icons/images/rotateleft_rest.png' %} id='left-rotate' class='sea-icon' style="cursor:pointer;">
    <img src={% static 'openseadragon-flat-toolbar-icons/images/rotateright_rest.png' %} id='right-rotate' class='sea-icon' style="cursor:pointer;">
-    <select id="limiter" style='sea-icon'>
-		<option value="1000">All</option>
+    <select id="limiter" style='sea-icon' autocomplete="off">
+		<option value="1000" selected="selected">{% trans "Mostrar Todos" %}</option>
 		<option value="10">10</option>
 		<option value="20">20</option>
 		<option value="50">50</option>
@@ -338,20 +338,17 @@ var s = document.getElementById("limiter");
 var ITEMS_copy = JSON.parse(JSON.stringify(ITEMS));
 var SRCS_copy = JSON.parse(JSON.stringify(SRCS));
 
-s.addEventListener("change", function() {
-	opt = parseInt(getSelectedOption(s).value);
 
+
+s.addEventListener("change", function() {
+	random_start = Math.floor(Math.random() * (ITEMS_copy.length / 2))
+	opt = parseInt(getSelectedOption(s).value);
 	if (opt == 1000) {
 		opt = ITEMS_copy.length;
 	}
-
-	ITEMS = ITEMS_copy.slice(0, opt);
-	SRCS = SRCS_copy.slice(0, opt);
-	//viewer.world.resetItems();
-	console.log(ITEMS.length);
-	console.log(SRCS.length);
-	viewer.close();
-	viewer.open(SRCS);
+	ITEMS = ITEMS_copy.slice(random_start, random_start + opt);
+	SRCS = SRCS_copy.slice(random_start, random_start + opt);
+	viewer.close().open(SRCS);
 });
 
 function getSelectedOption(s) {
@@ -363,6 +360,10 @@ function getSelectedOption(s) {
 		}
 	}
 	return opt;
+}
+
+if (ITEMS_copy.length + SRCS_copy.length < 75) {
+	s.style.display = "none";
 }
 
 </script>
