@@ -112,7 +112,7 @@ ul.topnav li.right {float: right;}
         {% get_language_info_list for LANGUAGES as languages %}
         {% for language in languages %}
             <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                <b>{{ language.name_local }}</b>
+                <b>{{ language.name_local|title }}</b>
             </option>
         {% endfor %}
     </select>
