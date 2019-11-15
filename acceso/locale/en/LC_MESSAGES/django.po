@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-05 01:20+0000\n"
+"POT-Creation-Date: 2019-11-15 16:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,9 +87,7 @@ msgid "Cerrar la tabla"
 msgstr "Close the table"
 
 #: acceso/templates/acceso/caso.html:151
-#, fuzzy
-#| msgid "Typo de información"
-msgid "Tipo de información"
+msgid "Typo de información"
 msgstr "Type of Information"
 
 #: acceso/templates/acceso/caso.html:152
@@ -113,14 +111,10 @@ msgid "Apellido Materno"
 msgstr "Maternal Family Name"
 
 #: acceso/templates/acceso/caso.html:173
-#, fuzzy
-#| msgid "fecha de desaparicion"
 msgid "Fecha de Nacimiento"
 msgstr "date of birth"
 
 #: acceso/templates/acceso/caso.html:177
-#, fuzzy
-#| msgid "fecha de desaparicion"
 msgid "Fecha de desaparición"
 msgstr "date of disappearance"
 
@@ -137,8 +131,8 @@ msgid "Etnicidad"
 msgstr "ethnicity"
 
 #: acceso/templates/acceso/caso.html:193
-msgid "Profesión"
-msgstr "profession"
+msgid "Ocupación"
+msgstr "Occupation"
 
 #: acceso/templates/acceso/caso.html:198
 msgid "Actividaded Políticas"
@@ -192,8 +186,8 @@ msgid "Género de los desaparecidos"
 msgstr "Disappeared persons by gender"
 
 #: acceso/templates/acceso/collection.html:328
-msgid "Profesión de personas desaparecidas"
-msgstr "Professions of the disappeared"
+msgid "Ocupación de personas desaparecidas"
+msgstr "Occupation of the disappeared"
 
 #: acceso/templates/acceso/collection.html:391
 msgid "Detalles de los casos"
@@ -246,7 +240,7 @@ msgid "Photos"
 msgstr "Fotos"
 
 #: acceso/templates/acceso/filtrar_imagenes.html:286
-#: acceso/templates/acceso/index.html:163
+#: acceso/templates/acceso/index.html:168
 msgid "Buscar"
 msgstr "Search for"
 
@@ -316,7 +310,7 @@ msgstr "Section 2"
 msgid "¿Qué es el Archivo Histórico del GAM?"
 msgstr "What is the GAM Historical Archive?"
 
-#: acceso/templates/acceso/index.html:48
+#: acceso/templates/acceso/index.html:53
 msgid ""
 "Es un esfuerzo de rescate de miles de documentos, los cuales contienen los "
 "testimonios de las víctimas de violaciones de derechos humanos durante el "
@@ -335,7 +329,7 @@ msgstr ""
 "histories of the events are known from the testimonies of the families and "
 "that they contribute to the dignity and memory of the loved ones."
 
-#: acceso/templates/acceso/index.html:157
+#: acceso/templates/acceso/index.html:162
 msgid ""
 "Si usted búsca un caso particular, debe de ingresar el nombre de la persona, "
 "y en caso de encontrarlo en  nuestros registros digitales, puede ponerse en "
@@ -345,7 +339,7 @@ msgstr ""
 "if you find a case in our digital archive, you can contact us to get more "
 "information about the care."
 
-#: acceso/templates/acceso/index.html:207
+#: acceso/templates/acceso/index.html:212
 msgid "leer más aquí"
 msgstr "read more here"
 
@@ -376,6 +370,9 @@ msgstr "Language"
 #: acceso/templates/acceso/skynet.html:28
 msgid "Hello I'm skynet"
 msgstr "Hola, so skynet"
+
+#~ msgid "Profesión"
+#~ msgstr "profession"
 
 #~ msgid "Back to Top"
 #~ msgstr "Volver arriba"
