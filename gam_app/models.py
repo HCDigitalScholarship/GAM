@@ -21,7 +21,7 @@ class Persona(models.Model):
     edad_en_el_momento = models.CharField(max_length=200, blank=True)
     género = models.CharField(max_length=200, blank=True)
     etnicidad = models.CharField(max_length=200, blank=True)
-    profesión = models.CharField(max_length=200, blank=True)
+    ocupación = models.CharField(max_length=200, blank=True)
     actividades_políticas = models.ManyToManyField('Organización', blank=True)
     # relaciones = models.ManyToManyField('Relación', blank=True)
     image = models.ManyToManyField('Imagen', blank=True)

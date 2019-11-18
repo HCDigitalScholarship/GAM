@@ -601,14 +601,14 @@ class Plotly(TemplateView):
 #		new_js = front + my_js + back
 #		context['div_g'] = div_g
 #		context['gender_js'] = new_js
-        df_profession = pd.read_sql(
+        df_occupation = pd.read_sql(
                 """
-                SELECT profesión
+                SELECT ocupación
                 FROM gam_app_persona
                 """
                 , con=conn)
-        df_profession = df_profession.dropna()
-        li = list(df_profession['profesión'])
+        df_occupation = df_occupationion.dropna()
+        li = list(df_occupation['occupación'])
         li = list(filter(lambda a: a != '', li))
         #print(li)
         se = list(set(li))

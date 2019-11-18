@@ -84,7 +84,7 @@ $("#searcher1").append("<span><div class='input-group stylish-input-group'><inpu
       $("#searcher_counter").val(+$("#searcher_counter").val() + 1);
       var id_num = $("#searcher_counter").val();
       $("#searchers").append("<div id='searcher"+ id_num +"' class='form-group'></div>");
-	  $("#searcher" + id_num).append("<span>" + createLogicDropdown("AND") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='AND_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> en " + select_fields + "</span>");
+	  $("#searcher" + id_num).append("<span>" + createLogicDropdown("AND") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='AND_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> {% trans "en" %} " + select_fields + "</span>");
     }
   });
 
@@ -95,7 +95,7 @@ $("#searcher1").append("<span><div class='input-group stylish-input-group'><inpu
       $("#searcher_counter").val(+$("#searcher_counter").val() + 1);
       var id_num = $("#searcher_counter").val();
       $("#searchers").append("<div id='searcher"+ id_num +"'></div>");
-      $("#searcher" + id_num).append("<span>" + createLogicDropdown("OR") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='OR_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> en " + select_fields + "</span>");
+      $("#searcher" + id_num).append("<span>" + createLogicDropdown("OR") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='OR_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> {% trans "en" %} " + select_fields + "</span>");
     }
   });
    
@@ -106,7 +106,7 @@ $("#searcher1").append("<span><div class='input-group stylish-input-group'><inpu
       $("#searcher_counter").val(+$("#searcher_counter").val() + 1);
       var id_num = $("#searcher_counter").val();
       $("#searchers").append("<div id='searcher"+ id_num +"'></div>");
-      $("#searcher" + id_num).append("<span>" + createLogicDropdown("NOT") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='NOT_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> en " + select_fields + "</div>");
+      $("#searcher" + id_num).append("<span>" + createLogicDropdown("NOT") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='NOT_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> {% trans "en" %} " + select_fields + "</div>");
     }
   });
   
@@ -242,7 +242,7 @@ $(document).ready( function () {
             <b>{% trans "género" %} : </b> {{ persona.0.género }}<br>
             <b>{% trans "etnicidad" %} : </b> {{ persona.0.etnicidad }}<br>
             <b>{% trans "fecha de nacimiento" %} : </b> {{ persona.0.fecha_de_nacimiento}}<br>
-            <b>{% trans "profesión" %} : </b> {{ persona.0.profesión }}<br>
+            <b>{% trans "ocupación" %} : </b> {{ persona.0.ocupación }}<br>
             <b>{% trans "actividades políticas" %} : </b>
                 {% if persona.0.actividades_políticas.all|length == 0 %} N/A <!-- because this is a M2M field -->
                 {% else %}{{ persona.0.actividades_políticas.all }}{% endif %}<br>
