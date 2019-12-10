@@ -607,8 +607,8 @@ class Plotly(TemplateView):
                 FROM gam_app_persona
                 """
                 , con=conn)
-        df_occupation = df_occupationion.dropna()
-        li = list(df_occupation['occupación'])
+        df_occupation = df_occupation.dropna()
+        li = list(df_occupation['ocupación'])
         li = list(filter(lambda a: a != '', li))
         #print(li)
         se = list(set(li))
