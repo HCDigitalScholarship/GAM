@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 Django settings for archivo project.
 
@@ -26,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.241.128.56', 'archivogam.haverford.edu']
+ALLOWED_HOSTS = ['159.223.131.95',]
 
 
 # Application definition
@@ -41,13 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'django.contrib.postgres',
     'gam_app',
     'ckeditor',
     'storages',
     'django.contrib.sites',
     'django.contrib.flatpages',
     'mapwidgets',
-    'acceso',
+    'acceso'
     #    'django-datatables-view',
 ]
 

@@ -147,8 +147,11 @@ $("#searcher1").append("<span><div class='input-group stylish-input-group'><inpu
 
 {% get_current_language as LANGUAGE_CODE %}
 
-{% if state %}
+{% if not state %}
+<p> {%trans "No results found!" %} </p>
+{% endif %}
 
+{% if state %}
 <br>
 <!-- tabs -->
 <ul id="myTab" class="nav nav-tabs nav-justified">

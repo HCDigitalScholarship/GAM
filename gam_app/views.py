@@ -1,7 +1,7 @@
 from .models import *
 from django.shortcuts import redirect, render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from gam_app import advanced_search
+from gam_app import advanced_search_postgres
 from django.template import RequestContext
 from gam_app.forms import (
     EditForm,
@@ -397,7 +397,7 @@ def über(request):
 
 
 def advanced_search_submit(request):
-    context = advanced_search.advanced_search(request)
+    context = advanced_search_postgres.advanced_search(request)
     if context:
         context['state'] = context['results']
         print(type(context['state']))
@@ -446,7 +446,8 @@ def advanced_search_submit(request):
         return render(request, 'search_result_page.html', context)
     else:
         context = {"failed": True}
-        return redirect('index')
+        return render(request, 'no_results.html', context)
+        # return redirect('index')
     # return render(request, 'index.html', context)
 
 

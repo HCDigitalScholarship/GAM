@@ -7,7 +7,7 @@
 {% block content %}
 
 {% if failed %}
-       <span>Error Message</span>
+       <p> {% trans "No results found!" %} </p>
     {% endif %}
 
 {% if user.is_authenticated %}
