@@ -20,6 +20,9 @@ https://archivogam.haverford.edu/
 <p>Our digitization workflow consists of scanning equipment, a secure file transfer protocol, and a descriptive workflow for metadata. Building this capacity has allowed the project team to begin work on cataloging and digitizing around 4,000 cases of disappearances which contain roughly 8 linear meters (26 linear feet) of documentation. The size and nature of case files vary wildly, with some containing only handwritten fieldnotes of testimonies of rural massacres while others contain hundreds of pages of detailed description, news clippings, and letter writing campaigns.</p>
 
 ## Local Development
+### Clone the repo
+
+`git clone https://github.com/HCDigitalScholarship/GAM.git`
 
 ### Install the requirements
 
