@@ -52,8 +52,21 @@ Start by ssh-ing into the server (`ssh USER@IP_ADDRESS`). (To deploy to producti
 The project's source code is located in "/srv/GAM". You can access it and pull the most up-to-date version from Github using:
 
 `cd /srv/GAM`
+
 `git pull origin master`
 
 Note: you can use `sudo` before any command to get elevated privileges for anything that might require them.
+
+## Summer 2022 Updates
+### Search Functionality Improvements
+- In the previous version of the website, basic search was implemented which only allow us to perform exact matches. Therefore, basic search has several limitations especially when you want to perform complex lookups.
+- In the new version, full-text search was implemented which offers huge improvements over basic search.
+- To leverage full-text search, the entire database had to be converted from MySQL to PostgreSQL.
+- Some of the improvements that full-text search offers:
+  - Stop words such as (“a”, “an”, and “the”) are ignored. “The military station” returns same results as “military station”. On the other hand, basic search just returns the results that only includes “The military station”.
+  - Since search queries go through a stemming algorithm in full-text search, similar words (such as singular vs plurals and unaccented vs accented names) will be treated as similar words. Therefore, “Velasquez”, “Velásquez” return the same results
+  - Search results are ordered by relevancy. It takes into account how often the query terms appear in the document, how close the terms are on the document, and how important the part of the document is where they occur.
+- Full-text search Django's documentation can be found here: https://docs.djangoproject.com/en/4.1/ref/contrib/postgres/search/
+
 
 
