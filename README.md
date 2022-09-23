@@ -44,3 +44,16 @@ https://archivogam.haverford.edu/
 `python manage.py runserver`
 
 View local server at: http://127.0.0.1:8000/
+
+## Deploying
+
+Start by ssh-ing into the server (`ssh USER@IP_ADDRESS`). (To deploy to production, you must be on the [Haverford VPN](https://iitskb.sites.haverford.edu/knowledge-base/installing-the-vpn-client/) first. Request credentials from IT if you don't have them.)
+
+The project's source code is located in "/srv/GAM". You can access it and pull the most up-to-date version from Github using:
+
+`cd /srv/GAM`
+`git pull origin master`
+
+Note: you can use `sudo` before any command to get elevated privileges for anything that might require them.
+
+
