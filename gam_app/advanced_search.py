@@ -21,11 +21,11 @@ def advanced_search(request):
     three_pair = {}
     for item in request_list:
         if ticker == 1:
-            three_pair["search_string"] = item
+            three_pair["search_string"] = item.strip()
         elif ticker == 2:
-            three_pair["logic"] = item
+            three_pair["logic"] = item.strip()
         elif ticker == 3:
-            three_pair["field"] = item
+            three_pair["field"] = item.strip()
             formatted_request_list.append(three_pair)
             three_pair = {}
             ticker = 0  # set to zero since we are going inc after

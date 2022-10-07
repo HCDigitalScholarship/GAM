@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %} GAM {% endblock %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+
+<style>
+
+.highlight {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    border: 3px solid #fae746;
+    outline: 4px auto #fae746;
+    background-color: black;
+}
+</style>
+<!-- search form -->
+<!-- build a form --> 
+<form id="searchers_form"  action="" method="GET" style="padding-top: 10px;">
+  <div class="form-group" id="searchers">
+    <div id="searcher1"></div>
+  </div>
+  <input id="full_info" type="hidden" value='' name="full_info">
+</form>
+
+<!-- add buttons -->    
+<span>{% trans "Agregar un término de búsqueda" %}</span>
+<input type="hidden" id="searcher_counter" name="seacher_count" value="1">
+<button type="button" style="border-color: #000000;" id="OR_search" class="btn">{% trans "O" %}</button>
+<button type="button" style="border-color: #000000;" id="AND_search" class="btn">{% trans "Y" %}</button>
+<button type="button" style="border-color: #000000;" id="NOT_search" class="btn">{% trans "NO" %}</button>
+
+
+<script>
+  // reset counter to 1
+  // might want to get rid of this if we load based on previous counter
+  $(document).ready(function(){
+    $("#searcher_counter").val("1");
+  });
+
+  // These long lines are just html we will be using and reusing
+  //var select_fields = "<select class='form-control field_option'> <option value='Cualquier Campo'>{% trans "Cualquier Campo" %}</option> <option value='Persona'>{% trans "Persona" %}</option> <option value='Ubicación Geográfica'>{% trans "Ubicación Geográfica" %}</option> <option value='Género'>{% trans "Género" %}</option> <option value="Etnicidad">{% trans "Etnicidad" %}</option></select>";
+    var select_fields = "<select class='form-control field_option'> <option value='Cualquier Campo'>{% trans "Cualquier Campo" %}</option> <option value='Persona'>{% trans "Persona" %}</option> <option value='Ubicación Geográfica'>{% trans "Ubicación Geográfica" %}</option> <option value='Género'>{% trans "Género" %}</option> <option value='Etnicidad'>{% trans "Etnicidad" %}</option></select>";
+  var delete_button = "<button class='delete_searcher' type='button'><span class='glyphicon glyphicon-remove delete_searcher'></span></button>"; 
+      
+  // let users switch to which operators they picked  
+  function createLogicDropdown(operator) {
+    if(operator=="AND") {
+            return  "<select class='form-control logic_option'> <option value='OR'>{% trans "O" %}</option> <option value='AND' selected='selected'>{% trans "Y" %}</option> <option value='NOT'>{% trans "NO" %}</option></select>";
+    }
+    else if (operator=="OR") {
+            return  "<select class='form-control logic_option'> <option selected='selected' value='OR'>{% trans "O" %}</option> <option value='AND'>{% trans "Y" %}</option> <option value='NOT'>{% trans "NO" %}</option></select>";
+    }
+    else {
+            return  "<select class='form-control logic_option'> <option value='OR'>{% trans "O" %}</option> <option value='AND'>{% trans "Y" %}</option> <option selected='selected' value='NOT'>{% trans "NO" %}</option></select>";
+    }
+  }
+    
+  // make first search bar. This one can't be deleted
+$("#searcher1").append("<span><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='search' placeholder='{% trans "Buscar" %}...'><span class='input-group-addon'><button type='submit'><span class='glyphicon glyphicon-search'></span></button></span></div> {% trans "en" %} " + select_fields + "</span>");
+      
+  // what happens when you click AND
+  $("#AND_search").click(function(event) {
+    if($("#searcher_counter").val() < 11) {
+      // the plus here tells javascript to do as number addition so 1+1 doesn't equal 11.
+      $("#searcher_counter").val(+$("#searcher_counter").val() + 1);
+      var id_num = $("#searcher_counter").val();
+      $("#searchers").append("<div id='searcher"+ id_num +"' class='form-group'></div>");
+      $("#searcher" + id_num).append("<span>" + createLogicDropdown("AND") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='AND_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> {% trans "en" %} " + select_fields + "</span>");
+    }
+  });
+
+  // what happens when you click OR
+  $("#OR_search").click(function(event) {
+    if($("#searcher_counter").val() < 11) {
+      // the plus here tells javascript to do as number addition so 1+1 doesn't equal 11.
+      $("#searcher_counter").val(+$("#searcher_counter").val() + 1);
+      var id_num = $("#searcher_counter").val();
+      $("#searchers").append("<div id='searcher"+ id_num +"'></div>");
+      $("#searcher" + id_num).append("<span>" + createLogicDropdown("OR") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='OR_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> {% trans "en" %} " + select_fields + "</span>");
+    }
+  });
+   
+  // what happens when you click NOT
+  $("#NOT_search").click(function(event) {
+    if($("#searcher_counter").val() < 11) {
+      // the plus here tells javascript to do as number addition so 1+1 doesn't equal 11.
+      $("#searcher_counter").val(+$("#searcher_counter").val() + 1);
+      var id_num = $("#searcher_counter").val();
+      $("#searchers").append("<div id='searcher"+ id_num +"'></div>");
+      $("#searcher" + id_num).append("<span>" + createLogicDropdown("NOT") + "<br/><div class='input-group stylish-input-group'><input type='text' class='form-control search_text' name='NOT_search' placeholder='{% trans "Buscar..." %}'><span class='input-group-addon'>" + delete_button + "</span></div> {% trans "en" %} " + select_fields + "</div>");
+    }
+  });
+  
+  // what happens when you click Delete
+  // Need to use event delegation because these deletes don't 
+  // exist on the initial page load
+  $("#searchers").on("click", ".delete_searcher", function(event) {
+    event.preventDefault();
+    console.log("DELETE");
+    $(event.target).parent().parent().parent().parent().remove();
+    $("#searcher_counter").val(+$("#searcher_counter").val() - 1);
+  });
+   
+  // on submit we generate full_info
+  $("#searchers_form").submit(function(event) {
+    // uncomment to prevent page submit
+    // event.preventDefault();
+    var the_request = "";
+    $("#searchers").children().each(function() {
+      // THIS IS A BAD WAY OF DOING IT THAT DEPENDS ON THE STRUCTURE OF THE PAGE
+      // console.log($(this).children().children().children(".search_text").val());
+      // console.log($(this).children().children(".logic_option").val());
+      // console.log($(this).children().children(".field_option").val());
+      // console.log($(this).children());
+       var text  = $(this).children().children().children(".search_text").val();
+       var logic = $(this).children().children(".logic_option").val();
+       var field = $(this).children().children(".field_option").val();
+       the_request += text + "-" + logic + "-" + field + "-";
+    });        
+    $("#full_info").val(the_request);
+    // console.log($("#full_info").val());
+  });
+</script>
+<p> {% trans "No results found!" %} </p>
+{% endblock %}

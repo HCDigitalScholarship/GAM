@@ -16,6 +16,7 @@ from django_datatables_view.base_datatable_view import BaseDatatableView
 from django.utils.html import escape
 from django.db.models import Count, Q
 import mysql.connector
+import psycopg2
 from mysql.connector import errorcode
 import os
 import sys
@@ -327,15 +328,7 @@ class Plotly(TemplateView):
     template_name = 'acceso/collection.html'
     def get_context_data(self, **kwargs):
         context = super(Plotly, self).get_context_data(**kwargs)
-        try:
-            conn = mysql.connector.connect(user=DATABASES['default']['USER'], password=DATABASES['default']['PASSWORD'], host=DATABASES['default']['HOST'], database=DATABASES['default']['NAME'])
-        except mysql.connector.Error as err:
-            if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-                print("Something is wrong with your user name or password")
-            elif err.errno == errorcode.ER_BAD_DB_ERROR:
-                print("Database does not exist")
-            else:
-                print(err)
+        conn = psycopg2.connect(user=DATABASES['default']['USER'], password=DATABASES['default']['PASSWORD'], host=DATABASES['default']['HOST'], database=DATABASES['default']['NAME'])
         #c = conn.cursor()
         photos = os.listdir('/srv/GAM/acceso/static/pat_goudvis')
         photo = random.choice(photos)
@@ -444,10 +437,11 @@ class Plotly(TemplateView):
         ls = list(df_loc["departamento"])
         df_geo = pd.read_sql(
         """
-        SELECT Y(punto), X(punto), nombre_del_lugar
+        SELECT ST_Y(punto), ST_X(punto), nombre_del_lugar
         FROM gam_app_lugar
         """, con=conn)
         df_geo = df_geo.dropna()
+        print(df_geo)
         lss = list(df_geo["nombre_del_lugar"])
         counts = []
         for i in lss:
@@ -461,21 +455,21 @@ class Plotly(TemplateView):
         df_geo["text"] = df_geo["nombre_del_lugar"] + ' Number: ' + df_geo["counts"].astype(str)
         scl = [ [0,"rgb(255,255,0)"],[0.35,"rgb(255,215,0)"],[0.5,"rgb(245,222,179)"],\
     [0.6,"rgb(255,250,205)"],[0.7,"rgb(250,250,210)"],[1,"rgb(255,255,224)"] ]
-        context["geo_lat"] = list(df_geo["Y(punto)"])
-        context["geo_lon"] = list(df_geo["X(punto)"])
+        context["geo_lat"] = list(df_geo["st_y"])
+        context["geo_lon"] = list(df_geo["st_x"])
         context["geo_text"] = list(df_geo["text"])
         context["geo_counts"] = list(df_geo['counts'])
         context["geo_colorscale"] = scl
         context["geo_cmax"] = df_geo['counts'].max()
-        context["center_lon"] = (df_geo["X(punto)"].min() + df_geo["X(punto)"].max())/2
-        context["center_lat"] = (df_geo["Y(punto)"].min() + df_geo["Y(punto)"].max())/2
+        context["center_lon"] = (df_geo["st_x"].min() + df_geo["st_x"].max())/2
+        context["center_lat"] = (df_geo["st_y"].min() + df_geo["st_y"].max())/2
         data_geo = [ dict(
             type = 'scattergeo',
             #locationmode = 'ISO-3',
             #locations = list('GTM'),
             mode = 'markers',
-            lat = list(df_geo["Y(punto)"]),
-            lon = list(df_geo["X(punto)"]),
+            lat = list(df_geo["st_y"]),
+            lon = list(df_geo["st_x"]),
             text = list(df_geo["text"]),
             #textposition = ['top right', 'top left', 'top center', 'bottom right', 'top right', 'bottom left', 'top left', 'top center', 'bottom right', 'top left', 'top right', 'bottom right', 'top center', 'top right', 'top right'],
             marker = dict(
@@ -506,8 +500,8 @@ class Plotly(TemplateView):
             title = 'Missing People Locations',
             geo = dict(
                 scope='north america',
-                lonaxis = dict(range= [df_geo["X(punto)"].min()-1, df_geo["X(punto)"].max()+1]),
-                lataxis = dict(range = [df_geo["Y(punto)"].min()-1, df_geo["Y(punto)"].max()+1]),
+                lonaxis = dict(range= [df_geo["st_x"].min()-1, df_geo["st_x"].max()+1]),
+                lataxis = dict(range = [df_geo["st_y"].min()-1, df_geo["st_y"].max()+1]),
                 showland = True,
                 landcolor = "rgb(250, 250, 250)",
                 subunitcolor = "rgb(217, 217, 217)",

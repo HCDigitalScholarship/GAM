@@ -81,9 +81,10 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $('.resourceTable3').DataTable( {
+    $('.resourceTable3').dataTable( {
         "pageLength": 50,
-        "processing": true,
+        stateSave: true,
+	"processing": true,
         "serverSide": true,
         "ajax": "{% url 'carpeta_list_json_buscar' %}",
     } );
